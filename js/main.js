@@ -83,4 +83,41 @@
     requestAnimationFrame(() => goTo(index));
     window.addEventListener('load', () => goTo(index));
   }
+
+  /* ---------- Filtre + recherche (Expositions / Artistes) ---------- */
+  const filterToggle = document.getElementById('filterToggle');
+  const filterDropdown = document.getElementById('filterDropdown');
+  if (filterToggle && filterDropdown) {
+    filterToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = filterDropdown.classList.toggle('is-open');
+      filterToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', (e) => {
+      if (!filterDropdown.contains(e.target) && e.target !== filterToggle) {
+        filterDropdown.classList.remove('is-open');
+        filterToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  const filterSearch = document.getElementById('filterSearch');
+  const filterItems = document.querySelectorAll('[data-filter-item]');
+  const categoryChecks = filterDropdown ? filterDropdown.querySelectorAll('input[type="checkbox"]') : [];
+
+  if (filterItems.length) {
+    const applyFilters = () => {
+      const query = filterSearch ? filterSearch.value.trim().toLowerCase() : '';
+      const activeCategories = Array.from(categoryChecks).filter(c => c.checked).map(c => c.value);
+      filterItems.forEach((item) => {
+        const text = (item.dataset.search || '').toLowerCase();
+        const category = item.dataset.category || '';
+        const matchesQuery = !query || text.includes(query);
+        const matchesCategory = activeCategories.length === 0 || activeCategories.includes(category);
+        item.style.display = (matchesQuery && matchesCategory) ? '' : 'none';
+      });
+    };
+    if (filterSearch) filterSearch.addEventListener('input', applyFilters);
+    categoryChecks.forEach((c) => c.addEventListener('change', applyFilters));
+  }
 })();

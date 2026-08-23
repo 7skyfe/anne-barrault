@@ -358,9 +358,10 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .page-hero .divider { margin-top: 0; }
 
 .filter-bar {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
   padding: 16px 26px;
   border: 1.5px solid var(--border);
   border-radius: 999px;
@@ -374,6 +375,32 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .filter-bar svg { color: var(--text); flex: none; }
 :root[data-theme="light"][data-glass="on"] .filter-bar { border-color: var(--blue); color: var(--blue); }
 :root[data-theme="light"][data-glass="on"] .filter-bar svg { color: var(--blue); }
+
+.filter-bar__toggle {
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; padding: 0;
+  color: inherit; font: inherit; cursor: pointer; flex: none;
+}
+.filter-bar__search {
+  flex: 1; min-width: 0;
+  border: none; outline: none; background: transparent;
+  color: inherit; font: inherit;
+}
+.filter-bar__search::placeholder { color: var(--text-muted); opacity: 1; }
+.filter-bar__dropdown {
+  position: absolute; top: calc(100% + 10px); left: 0;
+  display: none; flex-direction: column; gap: 12px;
+  min-width: 240px; padding: 18px 22px;
+  background: var(--bg); border: 1.5px solid var(--border); border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+  z-index: 15;
+}
+.filter-bar__dropdown.is-open { display: flex; }
+.filter-bar__dropdown label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 400; color: var(--text); cursor: pointer;
+}
+.filter-bar__dropdown input[type="checkbox"] { accent-color: var(--blue); width: 16px; height: 16px; }
 
 /* =========================================================
    Projections
@@ -545,7 +572,7 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .expo-list-card { display: flex; gap: 20px; padding: 0 24px; border-left: 1px solid var(--border); }
 .expo-grid > .expo-list-card:nth-child(3n+1) { border-left: none; padding-left: 0; }
 .expo-list-card__image { flex: 0 0 42%; aspect-ratio: 1 / 1; }
-.expo-list-card__content { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.expo-list-card__content { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .expo-list-card__title { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.15; color: var(--text); }
 .expo-list-card__artist { font-size: 13px; font-weight: 700; color: var(--text); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 2px; }
 .expo-list-card__desc { font-size: 12px; line-height: 1.5; color: var(--text-muted); }
