@@ -201,6 +201,28 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 :root[data-theme="dark"] .hero__wash {
   background: linear-gradient(to top, rgba(10,10,10,0.55), rgba(10,10,10,0));
 }
+
+/* Liquid glass sur le header : flou qui couvre ~28% du haut de la photo hero,
+   fondu en dégradé (pas de bord dur = pas "une barre"), visible seulement en mode glass. */
+.hero__glass {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 28%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+}
+:root[data-glass="on"] .hero__glass {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  background: rgba(255, 255, 255, 0.12);
+}
+:root[data-theme="dark"][data-glass="on"] .hero__glass {
+  background: rgba(0, 0, 0, 0.18);
+}
 .hero__title-block {
   position: absolute;
   left: var(--margin);
