@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-glass="on">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Empreinte et la Couleur — Anne Barrault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="logo" aria-label="Anne Barrault — Accueil"><img class="logo__img--light" src="assets/logo-black.png" alt="Anne Barrault"><img class="logo__img--dark" src="assets/logo-white.png" alt="Anne Barrault"></a>
+  <div class="nav-controls">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Basculer le thème clair / sombre">
+      <svg class="icon-sun" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg class="icon-moon" width="26" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12.5A7.5 7.5 0 1 1 7.5 3a6 6 0 0 0 9.5 9.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="glass-toggle" id="glassToggle" type="button" aria-pressed="true" aria-label="Activer / désactiver le mode glass">
+      <span class="glass-toggle__label">on</span>
+      <span class="glass-toggle__pill"><span class="glass-toggle__knob"></span></span>
+    </button>
+    <button class="icon-btn" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menuOverlay">
+      <svg width="28" height="19" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1h22M0 8h22M0 15h22" stroke="currentColor" stroke-width="1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="menu-overlay" id="menuOverlay">
+  <button class="menu-close" id="menuClose" type="button" aria-label="Fermer le menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <ul class="menu-list">
+    <li><a href="artistes.html"><span class="sparkle" aria-hidden="true">✦</span>Artistes</a></li>
+    <li><a href="expositions.html"><span class="sparkle" aria-hidden="true">✦</span>Expositions</a></li>
+    <li><a href="a-propos.html"><span class="sparkle" aria-hidden="true">✦</span>À propos</a></li>
+    <li><a href="projections.html"><span class="sparkle" aria-hidden="true">✦</span>Projections</a></li>
+    <li><a href="https://www.shopify.com/fr" target="_blank" rel="noopener noreferrer"><span class="sparkle" aria-hidden="true">✦</span>Boutique<svg class="menu-list__external" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="expo-hero">
+    <div class="expo-hero__image img-frame"><img src="assets/artwork-viallat.jpg" alt="Œuvre de Claude Viallat"></div>
+    <div class="expo-hero__content">
+      <span class="tag">exposition</span>
+      <h1 class="expo-hero__title">L'EMPREINTE<br>ET LA<br>COULEUR</h1>
+      <div class="expo-hero__social-row">
+        <hr class="divider">
+        <div class="socials">
+          <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 1668.56 1221.19" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <span class="expo-hero__artist">Claude Viallat</span>
+      <p class="expo-hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</p>
+      <hr class="divider">
+    </div>
+  </section>
+
+  <section class="expo-quote">
+    <h2>"L'EMPREINTE ET LA COULEUR"</h2>
+    <p>MADE BY CLAUDE VIALLAT</p>
+  </section>
+
+  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
+
+  <section class="expo-bio">
+    <div class="expo-bio__text">
+      <p>Né en 1936 à Nîmes, Claude Viallat grandit à Aubais, un village du Gard à la forte tradition taurine. Il étudie à l'École des Beaux-Arts de Montpellier de 1955 à 1959, où il croise notamment André-Pierre Arnal, Vincent Bioulès et Daniel Dezeuze, puis rejoint l'École nationale supérieure des Beaux-Arts de Paris. Il vit et travaille aujourd'hui à Nîmes.</p>
+      <p>En 1969, il fait partie des membres fondateurs du mouvement Supports/Surfaces, qui appelle à un renouvellement de la peinture par la déconstruction de ses matériaux traditionnels. Depuis la fin des années 1960, il répète inlassablement une même forme abstraite, sorte d'empreinte ou de tampon, sur des supports variés (bâches industrielles, tissus, objets du quotidien), affranchissant la couleur du châssis et de la toile classique.</p>
+      <p>Influencé par Kenneth Noland, Morris Louis, Sam Francis, Mark Rothko et Jackson Pollock, il a enseigné dans plusieurs écoles d'art, à Nice, Limoges, Marseille, Nîmes et Paris.</p>
+      <hr class="divider">
+    </div>
+    <div class="expo-bio__portrait img-frame"><img src="assets/portrait-viallat.jpg" alt="Portrait de Claude Viallat"></div>
+  </section>
+
+  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
+
+  <section class="emerging">
+    <div class="emerging__head"><span class="eyebrow">RECOMMANDATIONS</span><hr class="divider"></div>
+    <div class="emerging__grid">
+      <article class="card"><a class="card__link" href="expo-when-i-think.html"><div class="card__image"><img class="placeholder-photo" src="assets/artwork-kamijo.jpg" alt=""></div><h3 class="card__title">"When I Think of You in Spring"</h3><span class="card__artist">SUSUMU KAMIJO</span></a></article>
+      <article class="card"><a class="card__link" href="expo-lorsque-la-beaute.html"><div class="card__image"><img class="placeholder-photo" src="assets/gallery-installation.jpg" alt=""></div><h3 class="card__title">"Lorsque la Beauté Paraît"</h3><span class="card__artist">LEE MINGWEI</span></a></article>
+      <article class="card"><a class="card__link" href="expo-viallat.html"><div class="card__image"><img class="placeholder-photo" src="assets/artwork-viallat.jpg" alt=""></div><h3 class="card__title">"L'Empreinte et la Couleur"</h3><span class="card__artist">CLAUDE VIALLAT</span></a></article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row footer__row--top">
+    <div class="footer__col">
+      <span class="eyebrow eyebrow--light">SUIVRE</span>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 8.5h2V5h-2c-2.2 0-4 1.8-4 4v2H9v3.5h2V21h3.5v-6.5H17l.5-3.5h-3V9c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M7 10v6M7 7.5v.01M11 16v-4c0-1.2.8-2 2-2s2 .8 2 2v4M11 12v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
+        <a href="#" aria-label="X"><svg width="18" height="18" viewBox="0 0 1668.56 1221.19" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col footer__newsletter">
+      <span class="eyebrow eyebrow--light">NEWSLETTER</span>
+      <p>ABONNEZ-VOUS A NOTRE NEWSLETTER ET RESTEZ<br>INFORME DE TOUT CE QUI CE PASSE A LA GALERIE.</p>
+    </div>
+    <button class="btn-outline" type="button">S'INSCRIRE</button>
+  </div>
+  <hr class="divider divider--footer">
+  <div class="footer__row footer__row--bottom">
+    <div class="footer__brand">
+      <a href="index.html" class="logo logo--footer"><img src="assets/logo-white.png" alt="Anne Barrault"></a>
+      <div class="footer__contact"><p>09 51 70 02 43</p><p>51 RUE DES ARCHIVES, 75003 PARIS</p></div>
+    </div>
+    <div class="footer__links">
+      <ul><li><a href="artistes.html">ARTISTES</a></li><li><a href="expositions.html">EXPOSITIONS & EVENEMENTS</a></li><li><a href="a-propos.html">A PROPOS</a></li><li><a href="#">NOUS REJOINDRE</a></li></ul>
+      <ul><li><a href="#">CONDITIONS GÉNÉRALES D'UTILISATION</a></li><li><a href="#">POLITIQUE DE CONFIDENTIALITÉ</a></li><li><a href="#">GESTION DES COOKIES</a></li><li><a href="#">CHARTE DES PARTENARIATS</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
