@@ -235,7 +235,7 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 /* ---------- Feature sections ---------- */
 .feature {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 64px;
   padding: 96px var(--margin);
   background: var(--bg);
@@ -243,6 +243,9 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .feature--reverse { flex-direction: row-reverse; }
 .feature__image { flex: 0 0 32%; aspect-ratio: 1 / 1; }
 .feature__image--wide { flex: 0 0 42%; aspect-ratio: 4 / 3; }
+/* Le texte s'étire sur toute la hauteur du cadre gris : tag/titre collés en haut,
+   "en savoir plus" poussé en bas (margin-top:auto sur le lien), le reste garde
+   son espacement naturel entre les deux. */
 .feature__content { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 
 .tag {
@@ -268,16 +271,16 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .feature__meta {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   gap: 24px;
 }
-.feature__artist { font-size: 16px; font-weight: 600; white-space: nowrap; }
+.feature__artist { font-size: 16px; font-weight: 700; white-space: nowrap; }
 .feature__bio { font-size: 12px; color: var(--text-muted); line-height: 1.5; text-align: right; max-width: 260px; }
 .feature--reverse .feature__bio { text-align: left; }
 
 .divider { width: 100%; border: none; border-top: 1px solid var(--border); margin: 0; }
-.feature__link { font-size: 14px; }
+.feature__link { font-size: 14px; color: var(--text-muted); margin-top: auto; }
 
 /* ---------- Emerging artists ---------- */
 .emerging {
