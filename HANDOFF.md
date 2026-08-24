@@ -152,15 +152,18 @@ car ça donne un vrai sujet à raconter pour le dossier 5.
   pratiques" (`_data/galerie.yml`).
 - **Important, à ne pas présenter comme fonctionnel** : ce CMS ne pilote PAS encore le site
   actuel. Les pages (`index.html`, `expositions.html`, etc.) restent en HTML codé en dur,
-  elles ne lisent ni `_data/galerie.yml` ni un éventuel contenu de `_expositions/`. Les
-  dossiers `_expositions/`, `_artistes/`, `_projections/` que `config.yml` référence
-  n'existent même pas encore dans le dépôt.
-- **Incohérence à signaler ou à corriger avant de documenter** : `_data/galerie.yml`
-  contient l'adresse "22 rue Saint-Claude, 75003 Paris", alors que le footer du site codé
-  en dur affiche "51 RUE DES ARCHIVES, 75003 PARIS". Les deux ne sont pas synchronisées
-  puisque le CMS n'alimente rien pour l'instant — à corriger dans un sens ou l'autre selon
-  ce qui doit apparaître comme l'adresse "officielle" du projet, avant d'en parler dans le
-  dossier.
+  elles ne lisent ni `_data/galerie.yml` ni le contenu de `_expositions/`, `_artistes/`,
+  `_projections/`.
+- **Mise à jour (commit `d42b79e`)** : l'adresse dans `_data/galerie.yml` est corrigée en
+  "51 rue des Archives, 75003 Paris", cohérente avec le footer du site codé en dur. Les
+  trois dossiers `_expositions/`, `_artistes/`, `_projections/` existent maintenant, chacun
+  avec un fichier d'exemple (`when-i-think-of-you-in-spring.md`, `susumu-kamijo.md`,
+  `carte-blanche-marie-losier.md`) — donc le back-office, une fois l'authentification
+  activée, affiche une entrée par collection plutôt que trois listes vides. Le contenu de
+  ces exemples reprend fidèlement les vraies données du site (bio de Kamijo, vraie
+  programmation Losier/Sing Sing du 29 septembre 2026, mention explicite qu'aucun
+  photogramme libre de droits n'était disponible pour la projection). Ça reste néanmoins
+  une maquette : ces fichiers ne sont lus par aucune page du site.
 - Pour le dossier 5, le récit honnête est donc : "maquette d'un back-office pensé pour la
   suite du projet, avec un modèle de contenu structuré (collections, champs obligatoires
   comme le texte alternatif des images), mais non branché sur le site statique actuel" —
@@ -180,22 +183,25 @@ Voici un prompt prêt à copier-coller pour cette tâche précise :
 > Pour le dossier 5 (séminaire 5), rédige une section qui présente ce back-office comme
 > un choix de conception assumé et documenté, PAS comme une fonctionnalité branchée sur
 > le site en ligne : le site reste en HTML codé en dur, ce CMS ne pilote rien pour
-> l'instant, et les dossiers de contenu qu'il référence (`_expositions/`, `_artistes/`,
-> `_projections/`) n'existent pas encore. Présente-le comme la modélisation d'un futur
-> système de gestion de contenu (structure de collections, champs obligatoires comme le
-> texte alternatif des visuels pour l'accessibilité), pas comme un CMS opérationnel.
+> l'instant. Présente-le comme la modélisation d'un futur système de gestion de contenu
+> (structure de collections, champs obligatoires comme le texte alternatif des visuels
+> pour l'accessibilité), pas comme un CMS opérationnel.
 >
-> Avant de documenter l'adresse de la galerie, vérifie `_data/galerie.yml` (actuellement
-> "22 rue Saint-Claude, 75003 Paris") contre le footer du site codé en dur dans
-> `index.html` (actuellement "51 RUE DES ARCHIVES, 75003 PARIS") : les deux divergent.
-> Choisis laquelle est la bonne adresse "officielle" du projet, harmonise les deux
-> fichiers en conséquence, puis documente ce choix dans le dossier.
+> Chaque collection (`_expositions/`, `_artistes/`, `_projections/`) contient déjà un
+> fichier d'exemple avec de vraies données du projet (bio de Susumu Kamijo, la
+> programmation réelle "Carte blanche à Marie Losier et Sing Sing" du 29 septembre 2026,
+> l'exposition "When I Think of You in Spring") — appuie-toi dessus pour illustrer
+> concrètement le modèle de contenu dans le dossier, plutôt que de rester abstrait sur la
+> structure des champs. L'adresse dans `_data/galerie.yml` est déjà cohérente avec le
+> footer du site ("51 rue des Archives, 75003 Paris"), rien à harmoniser sur ce point.
 
 ## 5. Où vérifier
 
 - Site live : https://7skyfe.github.io/anne-barrault/
 - Portfolio live : https://7skyfe.github.io/anne-barrault/portfolio.html
-- Dernier commit poussé : `30daab8` — ajout de l'interface d'administration Decap CMS,
-  à la suite de `3ec56eb` (patch tablette/accessibilité + portfolio rafraîchi) et de
-  `9de7e92` ("Remplace le contenu placeholder de Projections par les vraies donnees de
-  galerieannebarrault.com/cinema") qui contient les correctifs eux-mêmes.
+- Dernier commit poussé : `d42b79e` — correction de l'adresse dans `_data/galerie.yml`
+  et ajout d'un exemple dans chaque collection du CMS, à la suite de `30daab8` (ajout de
+  l'interface d'administration Decap CMS), `3ec56eb` (patch tablette/accessibilité +
+  portfolio rafraîchi) et `9de7e92` ("Remplace le contenu placeholder de Projections par
+  les vraies donnees de galerieannebarrault.com/cinema") qui contient les correctifs
+  eux-mêmes.
