@@ -76,6 +76,22 @@ recherchées sur le site officiel de la galerie (https://galerieannebarrault.com
   appropriée n'était disponible pour ces œuvres — seul le texte/la donnée est réelle. À
   mentionner explicitement comme choix éditorial assumé dans les dossiers, pas à cacher.
 
+### g. Vérification mobile des 3 correctifs du jour (pas de régression)
+Les trois correctifs ci-dessus (e, f, et l'étoile de d) ont été retestés explicitement à
+375px (mobile), 768px (tablette) et en desktop, en plus du test initial :
+- **Expositions / filtrage** : à 375px, filtre "peinture" → 6 cartes en 1 colonne, largeur
+  et alignement uniformes, aucun chevauchement. À 768px, filtre "sculpture" → 3 cartes,
+  aucun chevauchement.
+- **Projections / contenu réel** : à 375px, tout le texte réel (films, dates, lieux) s'affiche
+  sans coupure ni chevauchement entre les 5 cartes ni dans le carrousel.
+- **Artistes / étoiles** : à 375px, l'étoile reste bien devant le nom ET le style "liste à
+  bordure basse" du bloc mobile étroit (`@media max-width:700px`, hérité du patch précédent)
+  est toujours actif et intact. À 768px, colonne unique, étoile devant le nom, aucun
+  chevauchement.
+- **Conclusion** : aucune régression sur les correctifs mobile précédents (hero, menu,
+  accessibilité, layout "1 étoile + nom" en liste étroite) — seules les 3 zones concernées
+  par les nouveaux bugs ont été touchées.
+
 ## 3. Pour le `portfolio.html` (captures d'écran à refaire)
 
 Les visuels suivants ont changé depuis les dernières captures dans `assets/pf/` : la landing
@@ -108,5 +124,6 @@ Points à intégrer dans le récit du processus de conception :
 
 - Site live : https://7skyfe.github.io/anne-barrault/
 - Portfolio live : https://7skyfe.github.io/anne-barrault/portfolio.html
-- Dernier commit poussé : `9de7e92` — "Remplace le contenu placeholder de Projections par
-  les vraies donnees de galerieannebarrault.com/cinema"
+- Dernier commit poussé : `c1b8ad6` — ajout de ce document de handoff, à la suite de
+  `9de7e92` ("Remplace le contenu placeholder de Projections par les vraies donnees de
+  galerieannebarrault.com/cinema") qui contient les correctifs eux-mêmes.
