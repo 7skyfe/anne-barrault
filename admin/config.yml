@@ -1,0 +1,74 @@
+# Configuration du back-office de la Galerie Anne Barrault
+# Le contenu est stocke dans des fichiers du depot, edites via cette interface.
+
+backend:
+  name: github
+  repo: 7skyfe/anne-barrault
+  branch: main
+  commit_messages:
+    update: 'Contenu : mise a jour de {{collection}} "{{slug}}"'
+    create: 'Contenu : ajout de {{collection}} "{{slug}}"'
+    delete: 'Contenu : suppression de {{collection}} "{{slug}}"'
+
+media_folder: "assets"
+public_folder: "/anne-barrault/assets"
+locale: "fr"
+
+collections:
+  - name: "expositions"
+    label: "Expositions"
+    label_singular: "Exposition"
+    folder: "_expositions"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{titre}} — {{artiste}}"
+    fields:
+      - { name: "titre", label: "Titre de l'exposition", widget: "string" }
+      - { name: "artiste", label: "Artiste", widget: "string" }
+      - { name: "categorie", label: "Catégorie", widget: "select", options: ["Peinture", "Sculpture", "Projection"] }
+      - { name: "date_debut", label: "Date de début", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { name: "date_fin", label: "Date de fin", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { name: "visuel", label: "Visuel principal", widget: "image", media_library: { config: { max_file_size: 2000000 } } }
+      - { name: "alt", label: "Description du visuel (lecteurs d'écran)", widget: "string", hint: "Obligatoire. Décrire l'œuvre en une phrase." }
+      - { name: "a_la_une", label: "Mettre en avant sur l'accueil", widget: "boolean", default: false }
+      - { name: "texte", label: "Texte de présentation", widget: "text" }
+
+  - name: "artistes"
+    label: "Artistes"
+    label_singular: "Artiste"
+    folder: "_artistes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "nom", label: "Nom", widget: "string" }
+      - { name: "fiche", label: "Publier une fiche complète", widget: "boolean", default: false, hint: "Sans fiche, le nom apparaît dans la liste mais n'est pas cliquable." }
+      - { name: "portrait", label: "Portrait", widget: "image", required: false }
+      - { name: "alt", label: "Description du portrait", widget: "string", required: false }
+      - { name: "bio", label: "Biographie", widget: "text", required: false }
+
+  - name: "projections"
+    label: "Projections"
+    label_singular: "Projection"
+    folder: "_projections"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "titre", label: "Titre", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { name: "horaire", label: "Horaire", widget: "string" }
+      - { name: "visuel", label: "Visuel", widget: "image" }
+      - { name: "alt", label: "Description du visuel", widget: "string" }
+      - { name: "texte", label: "Description", widget: "text" }
+
+  - name: "reglages"
+    label: "Informations pratiques"
+    files:
+      - name: "galerie"
+        label: "Coordonnées de la galerie"
+        file: "_data/galerie.yml"
+        fields:
+          - { name: "adresse", label: "Adresse", widget: "string" }
+          - { name: "telephone", label: "Téléphone", widget: "string" }
+          - { name: "email", label: "Adresse e-mail", widget: "string" }
+          - { name: "horaires", label: "Horaires d'ouverture", widget: "text" }
+          - { name: "boutique_url", label: "Lien du site marchand", widget: "string", hint: "Ce lien ouvre le site Shopify dans un nouvel onglet." }
