@@ -15,8 +15,8 @@
 <!-- ===================== NAV ===================== -->
 <header class="nav">
   <a href="/" class="logo" aria-label="Anne Barrault — Accueil">
-    <img class="logo__img--light" src="assets/logo-black.png" alt="Anne Barrault">
-    <img class="logo__img--dark" src="assets/logo-white.png" alt="Anne Barrault">
+    <img fetchpriority="high" decoding="async" class="logo__img--light" src="assets/logo-black.png" alt="Anne Barrault">
+    <img fetchpriority="high" decoding="async" class="logo__img--dark" src="assets/logo-white.png" alt="Anne Barrault">
   </a>
 
   <nav class="nav-inline" aria-label="Navigation principale">
@@ -73,7 +73,7 @@
 <main id="contenu" tabindex="-1">
   <!-- ===================== HERO ===================== -->
   <section class="hero" aria-label="Exposition à l'affiche">
-    <img class="hero__image placeholder-photo" src="assets/gallery-installation.jpg" alt="Installation « LES 26 » — Bernard Frize">
+    <img fetchpriority="high" decoding="async" class="hero__image placeholder-photo" src="assets/gallery-installation.jpg" alt="Installation « LES 26 » — Bernard Frize">
     <div class="hero__wash"></div>
     <div class="hero__glass"></div>
 
@@ -91,7 +91,7 @@
   <!-- ===================== FEATURE 1 ===================== -->
   <section class="feature">
     <a class="feature__image img-frame" href="expo-when-i-think.html" aria-label="Voir l'exposition When I Think of You in Spring">
-      <img src="assets/artwork-kamijo.jpg" alt="Œuvre de Susumu Kamijo">
+      <img loading="lazy" decoding="async" src="assets/artwork-kamijo.jpg" alt="Œuvre de Susumu Kamijo">
     </a>
 
     <div class="feature__content">
@@ -111,7 +111,7 @@
   <!-- ===================== FEATURE 2 ===================== -->
   <section class="feature feature--reverse">
     <a class="feature__image img-frame" href="expo-lorsque-la-beaute.html" aria-label="Voir l'exposition Lorsque la Beauté Paraît">
-      <img src="assets/gallery-installation.jpg" alt="Vue d'installation — Lee Mingwei">
+      <img loading="lazy" decoding="async" src="assets/gallery-installation.jpg" alt="Vue d'installation — Lee Mingwei">
     </a>
 
     <div class="feature__content">
@@ -131,7 +131,7 @@
   <!-- ===================== FEATURE 3 ===================== -->
   <section class="feature">
     <a class="feature__image img-frame" href="expo-viallat.html" aria-label="Voir l'exposition L'Empreinte et la Couleur">
-      <img src="assets/artwork-viallat.jpg" alt="Œuvre de Claude Viallat">
+      <img loading="lazy" decoding="async" src="assets/artwork-viallat.jpg" alt="Œuvre de Claude Viallat">
     </a>
 
     <div class="feature__content">
@@ -156,9 +156,9 @@
     </div>
 
     <div class="emerging__grid">
-      <article class="card"><a class="card__link" href="expo-when-i-think.html"><div class="card__image"><img class="placeholder-photo" src="assets/artwork-kamijo.jpg" alt=""></div><h3 class="card__title">"When I Think of You in Spring"</h3><span class="card__artist">SUSUMU KAMIJO</span></a></article>
-      <article class="card"><a class="card__link" href="expo-lorsque-la-beaute.html"><div class="card__image"><img class="placeholder-photo" src="assets/gallery-installation.jpg" alt=""></div><h3 class="card__title">"Lorsque la Beauté Paraît"</h3><span class="card__artist">LEE MINGWEI</span></a></article>
-      <article class="card"><a class="card__link" href="expo-viallat.html"><div class="card__image"><img class="placeholder-photo" src="assets/artwork-viallat.jpg" alt=""></div><h3 class="card__title">"L'Empreinte et la Couleur"</h3><span class="card__artist">CLAUDE VIALLAT</span></a></article>
+      <article class="card"><a class="card__link" href="expo-when-i-think.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/artwork-kamijo.jpg" alt=""></div><h2 class="card__title">"When I Think of You in Spring"</h2><span class="card__artist">SUSUMU KAMIJO</span></a></article>
+      <article class="card"><a class="card__link" href="expo-lorsque-la-beaute.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/gallery-installation.jpg" alt=""></div><h2 class="card__title">"Lorsque la Beauté Paraît"</h2><span class="card__artist">LEE MINGWEI</span></a></article>
+      <article class="card"><a class="card__link" href="expo-viallat.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/artwork-viallat.jpg" alt=""></div><h2 class="card__title">"L'Empreinte et la Couleur"</h2><span class="card__artist">CLAUDE VIALLAT</span></a></article>
     </div>
   </section>
 </main>
@@ -197,7 +197,7 @@
   <div class="footer__row footer__row--bottom">
     <div class="footer__brand">
       <a href="/" class="logo logo--footer" aria-label="Anne Barrault — Accueil">
-        <img src="assets/logo-white.png" alt="Anne Barrault">
+        <img fetchpriority="high" decoding="async" src="assets/logo-white.png" alt="Anne Barrault">
       </a>
       <div class="footer__contact">
         <p>09 51 70 02 43</p>

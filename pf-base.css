@@ -174,3 +174,27 @@ table.t th {
   letter-spacing: 2px;
   color: var(--muted);
 }
+
+/* Variante compacte pour les tableaux longs */
+table.t.t--compact th, table.t.t--compact td { padding: 8px 12px 8px 0; font-size: 17px; line-height: 1.25; }
+
+
+/* Zone de composition : les colonnes s'etirent, le dernier bloc lourd
+   d'une colonne courte descend se caler en bas. */
+.page { display: flex; flex-direction: column; }
+.page > .cols { flex: 1 1 auto; min-height: 0; align-items: stretch; }
+.page > .cols > .col { display: flex; flex-direction: column; }
+.col > .card:last-child,
+.col > table.t:last-child,
+.col > .kv:last-child { margin-top: auto; }
+
+/* Les blocs qui doivent occuper la hauteur restante de leur colonne */
+.col > .cols { flex: 1 1 auto; align-items: stretch; }
+.col .card[style*="height:100%"] { flex: 1 1 auto; }
+.col > .card:only-of-type { flex: 1 1 auto; }
+.col > table.t:last-of-type:not(:only-child) { margin-top: auto; }
+
+/* Repartition verticale quand une page compte plusieurs blocs empiles */
+.page.spread { justify-content: space-between; }
+.page.spread > .cols { flex: 0 1 auto; }
+.page.spread > .cols > .col { justify-content: space-between; }
