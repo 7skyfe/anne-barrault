@@ -1,0 +1,176 @@
+/* =========================================================
+   Portfolio — Galerie Anne Barrault
+   Reprend les tokens du site : blanc, #1a1a1a, bleu #274368,
+   Space Mono pour les titres, police systeme pour le texte.
+   ========================================================= */
+
+@page { size: 1920px 1080px; margin: 0; }
+
+:root {
+  --blue: #274368;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --gray: #e8e8e8;
+  --muted: rgba(26,26,26,0.55);
+  --mono: 'SpaceMono', 'Courier New', monospace;
+  --body: 'Inter', -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #d5d5d5; font-family: var(--body); color: var(--black); }
+
+.page {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--white);
+  color: var(--black);
+  padding: 88px 110px;
+  margin: 0 auto 28px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; margin-bottom: 0; }
+.page.dark { background: #0a0a0a; color: var(--white); }
+.page.dark { --muted: rgba(255,255,255,0.55); }
+
+@media print {
+  body { background: none; }
+  .page { margin: 0; box-shadow: none; }
+}
+
+/* ---------- Titres ---------- */
+.t-mono {
+  font-family: var(--mono);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.02;
+}
+.step {
+  font-family: var(--mono);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.h1 { font-size: 128px; }
+.h2 { font-size: 72px; margin-bottom: 34px; }
+.h3 {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 26px;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.3px;
+}
+.h3.mt { margin-top: 34px; }
+
+/* ---------- Texte ---------- */
+p { margin: 0 0 16px 0; font-size: 22px; line-height: 1.5; font-weight: 400; }
+p:last-child { margin-bottom: 0; }
+.lead { font-size: 27px; line-height: 1.42; font-weight: 500; }
+.muted { color: var(--muted); }
+strong { font-weight: 700; }
+.blue { color: var(--blue); }
+.dark .blue { color: var(--white); }
+
+ul.l { margin: 0; padding: 0; list-style: none; }
+ul.l li {
+  position: relative;
+  padding-left: 34px;
+  font-size: 21px;
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+ul.l li:last-child { margin-bottom: 0; }
+ul.l li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 11px;
+  width: 12px; height: 12px;
+  background: var(--blue);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+}
+.dark ul.l li::before { background: var(--white); }
+
+hr.rule { border: none; border-top: 1px solid var(--gray); margin: 26px 0; }
+.dark hr.rule { border-top-color: #333; }
+
+/* ---------- Mise en page ---------- */
+.cols { display: flex; gap: 64px; }
+.col { flex: 1; min-width: 0; }
+.c35 { flex: 0 0 35%; }
+.c40 { flex: 0 0 40%; }
+.c45 { flex: 0 0 45%; }
+.c55 { flex: 0 0 55%; }
+.c60 { flex: 0 0 60%; }
+
+/* ---------- Images ---------- */
+.frame { background: var(--gray); padding: 14px; }
+.dark .frame { background: #1c1c1c; }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cap { font-family: var(--mono); font-size: 16px; color: var(--muted); margin-top: 12px; letter-spacing: 0.4px; }
+
+/* ---------- Blocs ---------- */
+.kv { display: flex; gap: 56px; flex-wrap: wrap; }
+.kv div { }
+.kv .k { font-family: var(--mono); font-size: 15px; letter-spacing: 2px; color: var(--muted); margin-bottom: 8px; }
+.kv .v { font-size: 24px; font-weight: 600; }
+
+.stat { display: flex; gap: 60px; }
+.stat .n { font-family: var(--mono); font-weight: 700; font-size: 76px; line-height: 1; color: var(--blue); }
+.dark .stat .n { color: var(--white); }
+.stat .lbl { font-size: 18px; line-height: 1.35; margin-top: 12px; max-width: 230px; color: var(--muted); }
+
+.card {
+  border: 1px solid var(--gray);
+  padding: 26px 30px;
+}
+.dark .card { border-color: #333; }
+.card--fill { background: var(--black); color: var(--white); border-color: var(--black); }
+.dark .card--fill { background: var(--white); color: var(--black); border-color: var(--white); }
+.card .h3 { font-size: 21px; margin-bottom: 10px; }
+.card p, .card li { font-size: 19px; line-height: 1.42; }
+
+table.t { width: 100%; border-collapse: collapse; }
+table.t th, table.t td {
+  border-bottom: 1px solid var(--gray);
+  padding: 13px 14px 13px 0;
+  text-align: left;
+  vertical-align: top;
+  font-size: 19px;
+  line-height: 1.35;
+}
+.dark table.t th, .dark table.t td { border-bottom-color: #333; }
+table.t th {
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 1.6px;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 8px 10px 0;
+}
+
+.corner {
+  position: absolute;
+  bottom: 44px; left: 110px; right: 110px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}

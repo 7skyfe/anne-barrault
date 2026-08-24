@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Refonte du site de la Galerie Anne Barrault — Bryan Dubreuil</title>
+<link rel="stylesheet" href="pf-fonts.css">
+<link rel="stylesheet" href="pf-base.css">
+<style>
+  @media screen { body { overflow-x: hidden; } }
+</style>
+</head>
+<body>
+
+<!-- ===== 1 COUVERTURE ===== -->
+<section class="page">
+  <div style="display:flex;flex-direction:column;height:100%;justify-content:space-between">
+    <div class="step">ÉTUDE DE CAS &nbsp;/&nbsp; UI &amp; UX DESIGN &nbsp;/&nbsp; 2026</div>
+
+    <div>
+      <div class="t-mono h1" style="max-width:1500px">Galerie<br>Anne Barrault</div>
+      <p class="lead" style="margin-top:40px;max-width:940px">Refonte complète du site d'une galerie d'art contemporain parisienne, de l'analyse au prototype codé et testé.</p>
+    </div>
+
+    <div class="kv">
+      <div><div class="k">RÔLE</div><div class="v">UI / UX Designer,<br>conception et intégration</div></div>
+      <div><div class="k">DURÉE</div><div class="v">5 semaines,<br>4 séminaires</div></div>
+      <div><div class="k">LIVRABLE</div><div class="v">Site vitrine responsive,<br>prototype fonctionnel en ligne</div></div>
+      <div><div class="k">OUTILS</div><div class="v">Figma, HTML, CSS,<br>JavaScript</div></div>
+      <div><div class="k">PAR</div><div class="v">Bryan Dubreuil<br>Titre RNCP Designer Numérique</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 LE PROJET EN BREF ===== -->
+<section class="page dark">
+  <div class="step">01 &nbsp;/&nbsp; LE PROJET EN BREF</div>
+  <div class="cols">
+    <div class="col c45">
+      <div class="t-mono h2">Une galerie<br>qui montre mal<br>ce qu'elle montre<br>très bien</div>
+      <p class="lead">La Galerie Anne Barrault existe depuis 1999 dans le Marais. Elle défend des artistes émergents à côté de figures établies, avec un vrai parti pris curatorial.</p>
+      <p>Son site, lui, ne racontait rien de tout ça. Lent, daté, difficile à parcourir, il donnait l'impression d'un lieu qui n'expose plus. Ma mission a été de reconstruire ce site vitrine pour qu'il ressemble enfin à la galerie.</p>
+    </div>
+
+    <div class="col">
+      <div class="frame" style="height:520px"><img src="assets/pf/pf-accueil.jpg" alt="Page d'accueil du site refondu"></div>
+      <div class="cap">Page d'accueil, prototype final</div>
+    </div>
+  </div>
+
+  <div class="corner"><span>GALERIE ANNE BARRAULT</span><span>BRYAN DUBREUIL — 2026</span></div>
+</section>
+
+<!-- ===== 3 PROBLEMATIQUES ===== -->
+<section class="page">
+  <div class="step">02 &nbsp;/&nbsp; LE POINT DE DÉPART</div>
+  <div class="t-mono h2">Trois problèmes,<br>un seul symptôme</div>
+
+  <div class="cols" style="margin-top:10px">
+    <div class="col">
+      <div class="card" style="height:100%">
+        <div class="h3">Le site est lent</div>
+        <p>Toutes les images se chargeaient dès l'arrivée sur la page d'accueil, soit environ 5 Mo transférés avant même d'avoir lu une ligne. Sur une connexion moyenne, le visiteur attend devant un écran vide.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="height:100%">
+        <div class="h3">L'information est noyée</div>
+        <p>Les horaires, l'adresse, les dates d'exposition étaient dispersés et traités visuellement comme le reste. Il fallait chercher pour trouver ce que tout le monde vient chercher en premier.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="height:100%">
+        <div class="h3">L'écran contredit le lieu</div>
+        <p>Dans la galerie, les murs sont blancs et les œuvres parlent seules. En ligne, l'utilisateur subissait un flux d'images empilées sans respiration. Deux expériences opposées pour un même lieu.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin:44px 0 34px">
+
+  <div class="cols">
+    <div class="col c55">
+      <div class="h3">La question de départ</div>
+      <p class="lead">Comment faire un site de galerie qui donne envie de regarder, sans imposer une seule image à quelqu'un qui n'a pas encore décidé de regarder ?</p>
+    </div>
+    <div class="col">
+      <div class="h3">Ce que la galerie demandait</div>
+      <ul class="l">
+        <li>Mieux valoriser les artistes et les expositions</li>
+        <li>Rendre l'identité curatoriale lisible dès l'accueil</li>
+        <li>Un site rapide, tenable dans le temps, à petit budget</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 RECHERCHES ===== -->
+<section class="page">
+  <div class="step">03 &nbsp;/&nbsp; RECHERCHES</div>
+  <div class="cols">
+    <div class="col c55">
+      <div class="t-mono h2">Ce que j'ai regardé<br>avant de dessiner</div>
+
+      <div class="h3">L'existant</div>
+      <p>J'ai relevé le poids des pages, le nombre de clics pour atteindre une information pratique, et la profondeur de l'arborescence. Trois niveaux pour arriver à une œuvre, cinq secondes d'attente sur l'accueil.</p>
+
+      <div class="h3 mt">Les sites de galeries et d'institutions</div>
+      <p>Le même réflexe partout : une mosaïque de vignettes en page d'accueil. Ça remplit l'écran mais ça met toutes les œuvres au même niveau, donc plus rien ne ressort. Les rares sites qui m'ont marqué faisaient l'inverse et assumaient le vide.</p>
+
+      <div class="h3 mt">Le lieu physique</div>
+      <p>C'est là que le concept est né. Une galerie, ce sont des murs blancs, de l'espace entre les œuvres, et une seule chose à regarder à la fois. J'ai décidé de traduire ça à l'écran plutôt que d'illustrer la galerie avec des photos de la galerie.</p>
+    </div>
+
+    <div class="col">
+      <div class="stat" style="flex-direction:column;gap:38px">
+        <div><div class="n">5 Mo</div><div class="lbl">transférés à l'arrivée sur l'ancienne page d'accueil</div></div>
+        <div><div class="n">3</div><div class="lbl">niveaux de navigation avant d'atteindre une œuvre</div></div>
+        <div><div class="n">0</div><div class="lbl">hiérarchie visuelle entre une info pratique et une image décorative</div></div>
+      </div>
+      <div class="card card--fill" style="margin-top:40px">
+        <div class="h3">Ce que j'en ai tiré</div>
+        <p>Le problème n'était pas le manque d'images. C'était qu'elles étaient toutes là, tout le temps, sans que personne ne les ait demandées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 LE CONCEPT ===== -->
+<section class="page dark">
+  <div class="step">04 &nbsp;/&nbsp; LE CONCEPT</div>
+  <div class="cols">
+    <div class="col c45">
+      <div class="t-mono h2">Le silence visuel</div>
+      <p class="lead">Le site ne cherche pas à impressionner. Il enlève tout ce qui n'est pas l'œuvre, l'artiste ou l'information utile, et il laisse le reste respirer.</p>
+      <hr class="rule">
+      <ul class="l">
+        <li><strong>Le vide est un matériau.</strong> Les blancs séparent les informations, à la place des traits, des cadres et des fonds colorés.</li>
+        <li><strong>La typographie porte la hiérarchie.</strong> La taille et la graisse suffisent à dire ce qui compte, sans décoration.</li>
+        <li><strong>Rien ne bouge sans demande.</strong> Aucune animation d'entrée, aucun carrousel automatique, aucune fenêtre qui surgit.</li>
+        <li><strong>Le visiteur garde la main.</strong> Thème clair ou sombre, effets visuels activés ou coupés : c'est lui qui règle son environnement.</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <div class="frame" style="height:470px"><img src="assets/pf/pf-artistes.jpg" alt="Page Artistes, mur de noms"></div>
+      <div class="cap">Page Artistes : seize noms, aucune image. La page la plus légère du site, et celle qui porte le mieux le concept.</div>
+    </div>
+  </div>
+  <div class="corner"><span>GALERIE ANNE BARRAULT</span><span>LE SILENCE VISUEL</span></div>
+</section>
+
+<!-- ===== 6 DIRECTION ARTISTIQUE ===== -->
+<section class="page">
+  <div class="step">05 &nbsp;/&nbsp; DIRECTION ARTISTIQUE</div>
+  <div class="cols">
+    <div class="col c40">
+      <div class="t-mono h2">Deux polices,<br>trois couleurs,<br>un cadre</div>
+
+      <div class="h3">Typographie</div>
+      <p><span class="t-mono" style="font-size:22px">Space Mono</span> pour les titres. Une monospace donne un côté fiche technique et archive qui va bien à l'art contemporain, et elle reste très lisible en grand.</p>
+      <p>Police système pour le corps de texte. Elle est déjà installée sur l'appareil du visiteur, donc aucun fichier à télécharger et une lecture nette sur tous les écrans.</p>
+
+      <div class="h3 mt">Le cadre gris</div>
+      <p>Chaque visuel est posé sur un aplat gris avec 14 px de marge intérieure, comme un passe-partout d'encadrement. Ça donne sa signature au site et ça absorbe les différences de format entre les photos fournies par la galerie.</p>
+    </div>
+
+    <div class="col">
+      <div style="display:flex;gap:24px;margin-bottom:26px">
+        <div style="flex:1">
+          <div style="height:130px;background:#ffffff;border:1px solid #e8e8e8"></div>
+          <div class="cap">BLANC &nbsp;#FFFFFF<br>Fond, respiration</div>
+        </div>
+        <div style="flex:1">
+          <div style="height:130px;background:#1a1a1a"></div>
+          <div class="cap">NOIR &nbsp;#1A1A1A<br>Texte, contraste 21:1</div>
+        </div>
+        <div style="flex:1">
+          <div style="height:130px;background:#274368"></div>
+          <div class="cap">BLEU &nbsp;#274368<br>Accent, un seul usage</div>
+        </div>
+        <div style="flex:1">
+          <div style="height:130px;background:#e8e8e8"></div>
+          <div class="cap">GRIS &nbsp;#E8E8E8<br>Cadre des visuels</div>
+        </div>
+      </div>
+
+      <div class="frame" style="height:360px"><img src="assets/pf/pf-fiche.jpg" alt="Fiche exposition"></div>
+      <div class="cap">Fiche exposition : le cadre gris, la monospace en titre, le filet comme seul séparateur</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7 ARCHITECTURE ===== -->
+<section class="page">
+  <div class="step">06 &nbsp;/&nbsp; ARCHITECTURE ET PARCOURS</div>
+  <div class="cols">
+    <div class="col c45">
+      <div class="t-mono h2">Deux niveaux,<br>pas trois</div>
+      <p>J'ai mis l'arborescence à plat. Cinq rubriques accessibles depuis n'importe quelle page, deux niveaux de profondeur maximum, et les archives d'expositions traitées comme un filtre plutôt que comme une page à part.</p>
+
+      <div class="h3 mt">Les cinq rubriques</div>
+      <table class="t">
+        <tr><th>Rubrique</th><th>Contenu</th></tr>
+        <tr><td><strong>Artistes</strong></td><td>Mur de noms, fiches individuelles</td></tr>
+        <tr><td><strong>Expositions</strong></td><td>Catalogue filtrable, en cours et archives</td></tr>
+        <tr><td><strong>À propos</strong></td><td>Histoire de la galerie, infos pratiques</td></tr>
+        <tr><td><strong>Projections</strong></td><td>Dates à venir, séances passées</td></tr>
+        <tr><td><strong>Boutique</strong></td><td>Redirection vers le site marchand externe</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <div class="h3">Trois parcours testés</div>
+      <ul class="l">
+        <li><strong>L'accès direct.</strong> Un visiteur veut les horaires. Deux clics, sans passer devant une seule image.</li>
+        <li><strong>L'immersion contrôlée.</strong> Un amateur veut découvrir les œuvres. Il ouvre les visuels au fur et à mesure, à son rythme.</li>
+        <li><strong>La recherche.</strong> Un collectionneur cherche une exposition précise. Filtre par catégorie et recherche instantanée dans le catalogue.</li>
+      </ul>
+
+      <div class="frame" style="height:330px;margin-top:26px"><img src="assets/pf/pf-menu.jpg" alt="Menu plein écran"></div>
+      <div class="cap">Le menu plein écran : cinq entrées, et la seule qui fait sortir du site est annoncée comme telle</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8 DES MAQUETTES AU PROTOTYPE ===== -->
+<section class="page dark">
+  <div class="step">07 &nbsp;/&nbsp; DES MAQUETTES AU PROTOTYPE</div>
+  <div class="cols">
+    <div class="col c35">
+      <div class="t-mono h2">Un vrai site,<br>pas une suite<br>d'écrans</div>
+      <p>Les maquettes ont été faites sur Figma, avec un design system complet : couleurs, typographies, composants. Ensuite j'ai choisi de coder le prototype plutôt que de le simuler.</p>
+      <p>Ça change tout au moment de tester. Le site s'ouvre sur le téléphone du testeur, les temps de chargement sont réels, et si une animation rame, elle rame pour de vrai.</p>
+      <hr class="rule">
+      <div class="kv" style="gap:38px">
+        <div><div class="k">PAGES</div><div class="v">8</div></div>
+        <div><div class="k">THÈMES</div><div class="v">2</div></div>
+        <div><div class="k">POIDS DU CODE</div><div class="v">30 Ko</div></div>
+        <div><div class="k">DÉPENDANCES</div><div class="v">0</div></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div style="display:flex;gap:24px">
+        <div style="flex:1">
+          <div class="frame" style="height:400px"><img src="assets/pf/pf-expositions.jpg" alt="Page Expositions"></div>
+          <div class="cap">Catalogue filtrable</div>
+        </div>
+        <div style="flex:1">
+          <div class="frame" style="height:400px"><img src="assets/pf/pf-sombre.jpg" alt="Accueil en thème sombre"></div>
+          <div class="cap">Thème sombre, mémorisé d'une visite à l'autre</div>
+        </div>
+      </div>
+      <div class="card card--fill" style="margin-top:28px">
+        <div class="h3">Le choix technique</div>
+        <p>HTML, CSS et JavaScript écrits à la main, aucun framework, aucune bibliothèque. Une galerie doit pouvoir faire reprendre son site par n'importe quel prestataire dans cinq ans, sans avoir à mettre à jour une pile de dépendances.</p>
+      </div>
+    </div>
+  </div>
+  <div class="corner"><span>GALERIE ANNE BARRAULT</span><span>CONCEPTION ET PRODUCTION</span></div>
+</section>
+<!-- ===== 9 LE DESKTOP ===== -->
+<section class="page">
+  <div class="step">08 &nbsp;/&nbsp; LE PROTOTYPE, DESKTOP</div>
+  <div class="cols">
+    <div class="col c60">
+      <div class="frame" style="height:492px"><img src="assets/pf/pf-accueil.jpg" alt="Accueil desktop"></div>
+      <div class="cap">Accueil : pas de barre de navigation opaque, le logo et les contrôles flottent au-dessus de la photo</div>
+    </div>
+    <div class="col">
+      <div class="t-mono h2" style="font-size:56px">Ce qui se joue<br>en haut de page</div>
+      <ul class="l">
+        <li><strong>Un hero qui occupe 78 % de la hauteur</strong>, borné entre 560 et 820 px pour tenir aussi bien sur un portable que sur un écran large.</li>
+        <li><strong>Un voile en dégradé</strong> sur le bas de la photo garantit la lisibilité du titre quelle que soit l'image envoyée par la galerie.</li>
+        <li><strong>Trois contrôles seulement</strong> : thème, effets visuels, menu. Les trois rubriques principales apparaissent en toutes lettres au-delà de 1200 px.</li>
+        <li><strong>Une alternance en quinconce</strong> pour les expositions, qui casse la grille rigide des galeries en ligne.</li>
+      </ul>
+      <div class="frame" style="height:238px;margin-top:24px"><img src="assets/pf/pf-projections.jpg" alt="Page Projections"></div>
+      <div class="cap">Projections : dates à venir en liste, séances passées en carrousel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10 LE MOBILE ===== -->
+<section class="page">
+  <div class="step">09 &nbsp;/&nbsp; LE PROTOTYPE, MOBILE</div>
+  <div class="cols">
+    <div class="col c35">
+      <div class="t-mono h2">Un seul code,<br>aucun contenu<br>masqué</div>
+      <p>Pas de version mobile séparée. Un seul point de bascule à 860 px, les colonnes s'empilent, les marges se resserrent, les titres se calent sur la largeur de l'écran.</p>
+      <p>Rien n'est retiré au passage. Un contenu qu'on masque en mobile est un contenu qu'on ne remettra jamais, et une galerie sans équipe technique ne peut pas maintenir deux sites en parallèle.</p>
+      <hr class="rule">
+      <div class="h3">Ce que le mobile a révélé</div>
+      <p class="muted">La structure a tenu telle quelle. Ce sont les réglages hérités du desktop qui ont cassé : une largeur de carte, une marge de puce, une croix de fermeture hors de portée du pouce.</p>
+    </div>
+
+    <div class="col">
+      <div style="display:flex;gap:22px">
+        <div style="flex:1"><div class="frame" style="height:590px"><img src="assets/pf/pf-m-accueil.jpg" alt="Accueil mobile"></div><div class="cap">Accueil</div></div>
+        <div style="flex:1"><div class="frame" style="height:590px"><img src="assets/pf/pf-m-expos.jpg" alt="Expositions mobile"></div><div class="cap">Expositions, filtre ouvert</div></div>
+        <div style="flex:1"><div class="frame" style="height:590px"><img src="assets/pf/pf-m-artistes.jpg" alt="Artistes mobile"></div><div class="cap">Artistes</div></div>
+        <div style="flex:1"><div class="frame" style="height:590px"><img src="assets/pf/pf-m-menu.jpg" alt="Menu mobile"></div><div class="cap">Menu plein écran</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11 INTERACTIONS ===== -->
+<section class="page dark">
+  <div class="step">10 &nbsp;/&nbsp; INTERACTIONS</div>
+  <div class="cols">
+    <div class="col c45">
+      <div class="t-mono h2">Trois règles<br>pour le mouvement</div>
+      <ul class="l">
+        <li><strong>Rien ne bouge tant qu'on n'a rien demandé.</strong> Aucune apparition au scroll, aucun carrousel qui tourne tout seul.</li>
+        <li><strong>Rien ne dépasse une demi-seconde.</strong> Au-delà, l'animation devient une attente et le site paraît lent.</li>
+        <li><strong>Une animation explique un changement d'état.</strong> Si je ne sais pas dire ce qu'elle explique, je l'enlève.</li>
+      </ul>
+      <hr class="rule">
+      <div class="h3">Ce que j'ai retiré en route</div>
+      <p class="muted">L'apparition des blocs au scroll, l'agrandissement des images au survol qui faisait bouger la grille, et le défilement automatique du carrousel. Trois idées agréables une fois, pénibles la deuxième.</p>
+    </div>
+
+    <div class="col">
+      <table class="t">
+        <tr><th>Élément</th><th>Déclencheur</th><th>Durée</th></tr>
+        <tr><td>Menu plein écran, descente verticale</td><td>Clic</td><td>500 ms</td></tr>
+        <tr><td>Bascule clair et sombre</td><td>Clic</td><td>350 ms</td></tr>
+        <tr><td>Bouton d'effets, pastille qui glisse</td><td>Clic</td><td>250 ms</td></tr>
+        <tr><td>Carrousel, translation et mise à l'échelle</td><td>Clic ou glissement</td><td>500 ms</td></tr>
+        <tr><td>Nom d'artiste qui passe au bleu</td><td>Survol</td><td>200 ms</td></tr>
+        <tr><td>Carte d'exposition, image assombrie</td><td>Survol</td><td>250 ms</td></tr>
+      </table>
+      <div class="card" style="margin-top:30px">
+        <div class="h3">Accessibilité</div>
+        <p>Le site respecte le réglage système de réduction des animations : si le visiteur l'a activé sur son appareil, toutes les transitions sont coupées. Contraste maximal, navigation au clavier avec prise de focus visible et lien d'évitement en tête de page.</p>
+      </div>
+    </div>
+  </div>
+  <div class="corner"><span>GALERIE ANNE BARRAULT</span><span>MOTION ET ACCESSIBILITÉ</span></div>
+</section>
+
+<!-- ===== 12 TESTS ===== -->
+<section class="page">
+  <div class="step">11 &nbsp;/&nbsp; TESTS UTILISATEURS</div>
+  <div class="cols">
+    <div class="col c35">
+      <div class="t-mono h2">Cinq personnes,<br>quatre tâches,<br>aucune aide</div>
+      <p>Deux habituées des galeries, deux personnes qui n'y vont jamais, une personne de plus de 60 ans pour la lisibilité. Trois sur ordinateur, deux sur téléphone.</p>
+      <p>Méthode de la pensée à voix haute : je donne une tâche, je me tais, je note. Aucune aide, même quand ça bloque, sinon je teste mon explication et pas l'interface.</p>
+    </div>
+
+    <div class="col">
+      <table class="t">
+        <tr><th>Tâche</th><th>Réussite</th><th>Temps</th><th>Ce que j'ai vu</th></tr>
+        <tr><td>Trouver l'adresse et le téléphone</td><td>5 / 5</td><td>22 s</td><td>Tout le monde descend au pied de page avant d'ouvrir le menu</td></tr>
+        <tr><td>Trouver les œuvres d'un artiste</td><td>4 / 5</td><td>41 s</td><td>Le seul échec vient d'un nom sans fiche qui réagissait au survol</td></tr>
+        <tr><td>Trouver une exposition de peinture</td><td>3 / 5</td><td>1 min 06</td><td>Le filtre est vu tard, la recherche est utilisée à la place</td></tr>
+        <tr><td>Acheter une édition</td><td>5 / 5</td><td>18 s</td><td>Réussi, mais 3 sur 5 n'ont pas vu qu'ils avaient quitté le site</td></tr>
+      </table>
+
+      <div class="cols" style="margin-top:34px;gap:34px">
+        <div class="col">
+          <div class="card card--fill" style="height:100%">
+            <div class="h3">Ce qui a tenu</div>
+            <p>Personne ne s'est perdu dans l'arborescence, personne n'a eu besoin de revenir à l'accueil pour se repérer, et la lecture n'a posé aucun problème, y compris à la testeuse de plus de 60 ans.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="height:100%">
+            <div class="h3">Ce qui a cassé</div>
+            <p>Le bouton d'origine, marqué simplement on et off, n'a été compris par personne. Quatre réponses sur cinq : c'est pour couper le son. Le carrousel ne se glissait pas au doigt. La sortie vers la boutique passait inaperçue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13 AVANT APRES ===== -->
+<section class="page">
+  <div class="step">12 &nbsp;/&nbsp; CE QUE LES TESTS ONT CHANGÉ</div>
+  <div class="t-mono h2">Neuf corrections,<br>dont une qui touchait au concept</div>
+
+  <div class="cols">
+    <div class="col c45">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div style="flex:1">
+          <div class="frame" style="height:96px"><img src="assets/pf/pf-avant-header.jpg" alt="Header avant correction"></div>
+          <div class="cap">AVANT — un bouton marqué on / off, aucun mot pour dire ce qu'il fait</div>
+        </div>
+        <div style="flex:1">
+          <div class="frame" style="height:96px"><img src="assets/pf/pf-apres-header.jpg" alt="Header après correction"></div>
+          <div class="cap">APRÈS — l'étiquette Effets, plus les rubriques en toutes lettres</div>
+        </div>
+      </div>
+
+      <div class="card card--fill" style="margin-top:30px">
+        <div class="h3">L'arbitrage le plus important</div>
+        <p>Au départ, ce bouton devait couper les images : le site restait en texte seul tant qu'on ne survolait rien. En construisant le prototype, j'ai compris que ça se retournait contre la galerie. Son métier est de montrer des œuvres, et on ne fait pas travailler un visiteur pour voir une toile.</p>
+        <p>J'ai gardé l'idée et déplacé la cible. Le bouton ne coupe plus les images, il coupe les effets : flou, transparence, accent coloré. Le silence visuel reste, il porte sur le bruit et plus sur les œuvres. Et comme ces effets sont ce qui coûte le plus cher à afficher, le gain de performance est réel.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <table class="t">
+        <tr><th>Ce qui bloquait</th><th>Ce que j'ai fait</th></tr>
+        <tr><td>Le bouton on / off incompris</td><td>Étiquette Effets, état affiché à côté, explication au survol</td></tr>
+        <tr><td>Le menu burger cherché sur ordinateur</td><td>Les trois rubriques principales en toutes lettres au-delà de 1200 px</td></tr>
+        <tr><td>Le carrousel qui ne se glissait pas</td><td>Glissement au doigt et points de progression sous les cartes</td></tr>
+        <tr><td>La sortie vers la boutique invisible</td><td>Mention site marchand externe sous l'entrée du menu, avant le clic</td></tr>
+        <tr><td>Des noms d'artistes sans fiche</td><td>Opacité réduite, plus de survol, plus de faux lien</td></tr>
+        <tr><td>La croix du menu hors de portée du pouce</td><td>Croix ramenée en bas d'écran, fermeture par appui sur le fond</td></tr>
+        <tr><td>Le mur de noms illisible sur téléphone</td><td>Alignement à gauche sous 600 px, marges resserrées</td></tr>
+        <tr><td>Les animations non réductibles</td><td>Prise en compte du réglage système de réduction du mouvement</td></tr>
+        <tr><td>L'image du hero mal cadrée</td><td>Recadrage plein cadre quel que soit le format de la photo</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14 RESULTATS ===== -->
+<section class="page dark">
+  <div class="step">13 &nbsp;/&nbsp; RÉSULTATS</div>
+  <div class="cols">
+    <div class="col c55">
+      <div class="t-mono h2">Ce que le site fait<br>mieux qu'avant</div>
+      <div class="stat" style="margin-top:10px">
+        <div><div class="n">30 Ko</div><div class="lbl">de code pour tout le site, sans aucune bibliothèque externe</div></div>
+        <div><div class="n">2</div><div class="lbl">clics maximum pour atteindre n'importe quelle rubrique</div></div>
+        <div><div class="n">21:1</div><div class="lbl">de contraste, très au-delà du minimum exigé par le RGAA</div></div>
+      </div>
+      <hr class="rule" style="margin:38px 0">
+      <div class="h3">Ce que je retiens</div>
+      <p>Presque toutes les frictions relevées en test étaient des problèmes de vocabulaire, pas de structure. Les gens savaient où aller, ils ne savaient pas ce que faisait un bouton. C'est plus facile à corriger qu'une arborescence ratée, et je ne l'avais pas anticipé.</p>
+      <p>La deuxième leçon est plus dure : j'ai dessiné le desktop d'abord et adapté le mobile ensuite. Les vrais problèmes de ce projet étaient presque tous des problèmes mobiles, et je les ai découverts à la fin au lieu du début.</p>
+    </div>
+
+    <div class="col">
+      <div class="frame" style="height:340px"><img src="assets/pf/pf-apropos.jpg" alt="Page À propos"></div>
+      <div class="cap">Page À propos</div>
+      <div class="card" style="margin-top:26px">
+        <div class="h3">Les suites</div>
+        <p>Une interface d'administration pour que la galerie change ses expositions sans passer par un développeur, et le branchement du lien Boutique sur le vrai compte marchand. Ces deux chantiers sont documentés et chiffrés pour le commanditaire.</p>
+      </div>
+    </div>
+  </div>
+  <div class="corner"><span>GALERIE ANNE BARRAULT</span><span>RÉSULTATS ET SUITES</span></div>
+</section>
+
+<!-- ===== 15 COMPETENCES ===== -->
+<section class="page">
+  <div class="step">14 &nbsp;/&nbsp; COMPÉTENCES MOBILISÉES</div>
+  <div class="cols">
+    <div class="col c55">
+      <div class="t-mono h2" style="margin-bottom:26px">Ce que ce projet<br>m'a fait pratiquer</div>
+      <table class="t">
+        <tr><th>Domaine</th><th>Mise en pratique</th></tr>
+        <tr><td><strong>Stratégie</strong></td><td>Analyse de l'existant, positionnement, cadrage du besoin avec le commanditaire</td></tr>
+        <tr><td><strong>UX</strong></td><td>Architecture de l'information, parcours utilisateurs, wireframes, protocole de test et analyse des résultats</td></tr>
+        <tr><td><strong>UI</strong></td><td>Direction artistique, système typographique, design system Figma, déclinaison responsive</td></tr>
+        <tr><td><strong>Motion</strong></td><td>Micro-interactions, transitions, courbes d'accélération, arbitrage entre effet et lisibilité</td></tr>
+        <tr><td><strong>Intégration</strong></td><td>HTML, CSS et JavaScript sans framework, thèmes par variables, mémorisation des préférences</td></tr>
+        <tr><td><strong>Accessibilité</strong></td><td>Contrastes, navigation clavier, lien d'évitement, réduction du mouvement, sobriété numérique</td></tr>
+        <tr><td><strong>Livraison</strong></td><td>Documentation technique, recommandations de maintenance, transmission au commanditaire</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <div class="h3">Outils</div>
+      <div style="margin-bottom:34px">
+        <span class="pill">Figma</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Illustrator</span><span class="pill">Photoshop</span><span class="pill">TinyPNG</span><span class="pill">GitHub Pages</span>
+      </div>
+
+      <div class="card card--fill">
+        <div class="h3">Le prototype est en ligne</div>
+        <p class="t-mono" style="font-size:20px;line-height:1.4">7skyfe.github.io/anne-barrault</p>
+        <p style="margin-top:14px">Il se teste directement dans un navigateur, sur ordinateur comme sur téléphone.</p>
+      </div>
+
+      <hr class="rule" style="margin:34px 0">
+      <div class="kv">
+        <div><div class="k">CONTACT</div><div class="v">Bryan Dubreuil</div></div>
+        <div><div class="k">FORMATION</div><div class="v">Titre RNCP Designer Numérique</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* Mise a l'echelle du portfolio sur les ecrans plus petits que 1920 px.
+   Neutralisee a l'impression pour que l'export PDF reste au format 16/9. */
+(() => {
+  const fit = () => {
+    const z = Math.min(1, (window.innerWidth - 24) / 1920);
+    document.body.style.zoom = z;
+  };
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('beforeprint', () => { document.body.style.zoom = 1; });
+  window.addEventListener('afterprint', fit);
+})();
+</script>
+</body>
+</html>

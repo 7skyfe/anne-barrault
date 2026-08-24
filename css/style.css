@@ -761,3 +761,258 @@ a, button, .icon-btn, .tag, .card, .name-wall__item, .carousel-arrow, .filter-ba
   .carousel-card__meta .date { font-size: 13px; }
   .carousel-card__meta .desc { font-size: 11px; }
 }
+
+/* =========================================================
+   Séminaire 4 — correctifs issus des tests utilisateurs
+   ========================================================= */
+
+/* ---- Lien d'évitement (RGAA 12.7) ---- */
+.skip-link {
+  position: absolute;
+  left: 20px;
+  top: -80px;
+  z-index: 200;
+  padding: 12px 20px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 20px; }
+main:focus { outline: none; }
+
+/* ---- Prise de focus visible au clavier (RGAA 10.7) ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.name-wall__item:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+:root[data-theme="dark"] a:focus-visible,
+:root[data-theme="dark"] button:focus-visible,
+:root[data-theme="dark"] input:focus-visible { outline-color: #ffffff; }
+
+/* ---- Navigation en toutes lettres sur grand écran ----
+   Le menu burger seul obligeait 2 testeurs sur 5 à chercher la navigation.
+   Les 3 rubriques principales apparaissent au-dessus de 1200 px, le burger reste
+   pour accéder à l'ensemble. */
+.nav-inline { display: none; }
+@media (min-width: 1200px) {
+  .nav-inline { display: flex; gap: 32px; margin-left: auto; margin-right: 40px; }
+  .nav-inline a {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: var(--text);
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-inline a:hover { opacity: 0.55; }
+  .nav-inline a[aria-current="page"] { border-bottom-color: currentColor; }
+}
+
+/* ---- Bouton d'effets : une étiquette qui dit ce qu'il fait ---- */
+.glass-toggle__label { font-size: 14px; font-weight: 600; color: var(--text); }
+.glass-toggle__state {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1;
+  min-width: 22px;
+  text-align: left;
+}
+
+/* ---- Sortie vers le site marchand annoncée avant le clic ---- */
+.menu-list a { flex-wrap: wrap; }
+.menu-list__note {
+  flex-basis: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: -4px;
+  margin-left: 40px;
+}
+
+/* ---- Noms d'artistes sans fiche : plus de fausse promesse de clic ---- */
+.name-wall__item.is-empty { opacity: 0.5; cursor: default; }
+:root[data-theme="light"] .name-wall__item.is-empty:hover { color: var(--text); }
+:root[data-theme="dark"] .name-wall__item.is-empty:hover { color: var(--text); text-decoration: none; }
+
+/* ---- Points de progression du carrousel ---- */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 var(--margin) 40px;
+}
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background-color .2s ease, transform .2s ease;
+}
+.carousel-dot.is-active { background: var(--text); transform: scale(1.35); }
+.carousel-viewport { touch-action: pan-y; }
+
+/* ---- Mobile ---- */
+@media (max-width: 860px) {
+  /* Croix du menu ramenée dans la zone du pouce */
+  .menu-close { top: auto; bottom: 34px; right: 20px; }
+  .menu-list__note { margin-left: 28px; font-size: 12px; }
+  .nav-inline { display: none; }
+  .carousel-dots { padding: 0 20px 32px; }
+}
+
+@media (max-width: 600px) {
+  /* La justification creuse des trous énormes quand il n'y a que 2 noms par ligne */
+  .name-wall { text-align: left; }
+  .name-wall::after { display: none; }
+  .name-wall__item .sparkle { margin: 0 12px; }
+}
+
+/* ---- Respect du réglage système de réduction des animations (RGAA 13.8) ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .menu-overlay { transition: none; }
+  .carousel-track { transition: none; }
+}
+
+/* ---- Finition : l'image du hero ne couvrait pas toute la zone ----
+   Sans hauteur explicite, l'image gardait ses proportions et laissait
+   apparaitre des bandes de fond sur les cotes selon le format de la photo. */
+.hero__image { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+/* =========================================================
+   Reprise de la composition mobile
+   Trois points remontes apres relecture sur telephone :
+   le hero de l'accueil, le menu plein ecran et le mur d'artistes.
+   ========================================================= */
+
+@media (max-width: 860px) {
+
+  /* ---- 1. Header : le contenu des pages internes passait dessous ----
+     Le header est transparent. Au scroll, les titres et la barre de recherche
+     defilaient derriere le logo et devenaient illisibles. Un degrade tres court
+     redonne un fond au header sans reintroduire une barre a bord net. */
+  .nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    bottom: -26px;
+    background: linear-gradient(to bottom, var(--bg) 42%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .hero ~ * .nav::before { display: none; }
+
+  /* ---- 2. Hero de l'accueil : titre et date se superposaient ----
+     Les deux blocs etaient cales en absolu au meme endroit (bottom 64px),
+     donc ils se chevauchaient des que la largeur passait sous 860 px.
+     En mobile ils repassent dans le flux, empiles, ancres en bas de l'image. */
+  .hero {
+    height: 72vh;
+    min-height: 460px;
+    max-height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 20px 34px;
+  }
+  .hero__title-block,
+  .hero__meta-block {
+    position: relative;
+    left: auto; right: auto; bottom: auto;
+    z-index: 2;
+  }
+  .hero__title { font-size: clamp(44px, 14vw, 76px); line-height: 0.92; }
+  .hero__artist { font-size: 17px; margin-top: 8px; }
+  .hero__meta-block {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+  .hero__date, .hero__cta { font-size: 12px; }
+  .hero__cta { text-align: right; }
+  /* Le voile doit couvrir plus de hauteur : en mobile le titre passe sur
+     trois lignes et remontait au-dessus du degrade. */
+  .hero__wash { height: 62%; }
+
+  /* ---- 3. Menu plein ecran : tout etait centre, avec un vide enorme en haut ----
+     Les cinq entrees remontent sous le header, la croix reste en bas dans la
+     zone du pouce. */
+  .menu-overlay {
+    justify-content: flex-start;
+    padding: 104px 20px 96px;
+  }
+  .menu-list { gap: 4px; }
+  .menu-list a { font-size: clamp(34px, 10vw, 52px); gap: 12px; line-height: 1.15; }
+  .menu-list__note { margin-left: 26px; font-size: 11px; letter-spacing: 0.8px; }
+
+  /* ---- 4. Titres de pages internes ---- */
+  .page-hero { padding-top: 104px; }
+  .page-hero h1 { font-size: clamp(40px, 13vw, 64px); margin-bottom: 20px; }
+}
+
+/* ---- 5. Mur d'artistes : un nom par ligne, etoile en tete ----
+   La justification sur 390 px cassait les noms en deux et faisait flotter
+   l'etoile au milieu du vide. En dessous de 700 px la liste devient une
+   colonne : une etoile, un nom, retour a la ligne. */
+@media (max-width: 700px) {
+  .name-wall {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 4px 20px 48px;
+    line-height: 1.1;
+  }
+  .name-wall::after { display: none; }
+  .name-wall__item {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    font-size: clamp(22px, 7.4vw, 34px);
+    white-space: nowrap;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .name-wall__item:last-child { border-bottom: none; }
+  /* En colonne l'etoile devient la puce de la liste : le dernier nom la garde. */
+  .name-wall__item:last-child .sparkle { display: inline-block; }
+  .name-wall__item .sparkle {
+    margin: 0;
+    font-size: 0.5em;
+    flex: none;
+    opacity: 0.85;
+  }
+}
+
+/* ---- Correction d'un debordement horizontal sur Expositions ----
+   Le contenu de la carte etait en flex: 1 sans largeur minimale. Un titre en
+   monospace ne se coupant pas, la carte poussait la page a 458 px de large sur
+   un ecran de 390 : toute la page glissait lateralement. */
+.expo-list-card__content { min-width: 0; }
+.expo-list-card__title,
+.expo-list-card__artist { overflow-wrap: anywhere; }
+@media (max-width: 860px) {
+  .expo-list-card { padding-right: 0; }
+  .expo-list-card__image { flex-basis: 38%; }
+}
