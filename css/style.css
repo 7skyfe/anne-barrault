@@ -606,25 +606,29 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 /* =========================================================
    Artistes — mur de noms
    ========================================================= */
+/* Grille à 2 colonnes fixes — chaque nom occupe sa cellule, tout reste aligné
+   quelle que soit la longueur du nom (fini le texte justifié qui créait des
+   trous et un nombre de noms par ligne différent selon la largeur du mot). */
 .name-wall {
-  text-align: justify;
-  text-justify: inter-word;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 48px;
   padding: 8px var(--margin) 56px;
-  line-height: 1.35;
 }
-.name-wall::after { content: ''; display: inline-block; width: 100%; }
 .name-wall__item {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 24px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(40px, 5.6vw, 96px);
+  font-size: clamp(32px, 3.6vw, 72px);
+  line-height: 1.25;
   color: var(--text);
   cursor: pointer;
+  transition: color .2s ease;
 }
-.name-wall__item .sparkle { font-size: 0.4em; margin: 0 28px; color: var(--text); }
-.name-wall__item:last-child .sparkle { display: none; }
-.name-wall__item { transition: color .2s ease; }
+.name-wall__item .sparkle { font-size: 0.4em; color: var(--text); flex: none; }
 :root[data-theme="light"] .name-wall__item:hover { color: var(--blue); }
 :root[data-theme="dark"] .name-wall__item:hover { color: var(--white); text-decoration: underline; }
 
@@ -742,10 +746,9 @@ a, button, .icon-btn, .tag, .card, .name-wall__item, .carousel-arrow, .filter-ba
   }
   .expo-grid > .expo-list-card:first-child { padding-top: 0; border-top: none; }
 
-  /* ---- Artistes — mur de noms ---- */
-  .name-wall { padding: 8px 20px 40px; }
-  .name-wall__item { font-size: clamp(28px, 10vw, 56px); }
-  .name-wall__item .sparkle { margin: 0 14px; }
+  /* ---- Artistes — mur de noms : la grille repasse à 1 colonne ---- */
+  .name-wall { grid-template-columns: 1fr; gap: 18px; padding: 8px 20px 40px; }
+  .name-wall__item { font-size: clamp(26px, 9vw, 48px); }
 
   /* ---- Page titres internes ---- */
   .page-hero { padding: 96px 20px 24px; }
@@ -839,10 +842,6 @@ input:focus-visible,
   margin-left: 40px;
 }
 
-/* ---- Noms d'artistes sans fiche : plus de fausse promesse de clic ---- */
-.name-wall__item.is-empty { opacity: 0.5; cursor: default; }
-:root[data-theme="light"] .name-wall__item.is-empty:hover { color: var(--text); }
-:root[data-theme="dark"] .name-wall__item.is-empty:hover { color: var(--text); text-decoration: none; }
 
 /* ---- Points de progression du carrousel ---- */
 .carousel-dots {
@@ -869,12 +868,6 @@ input:focus-visible,
   .carousel-dots { padding: 0 20px 32px; }
 }
 
-@media (max-width: 600px) {
-  /* La justification creuse des trous énormes quand il n'y a que 2 noms par ligne */
-  .name-wall { text-align: left; }
-  .name-wall::after { display: none; }
-  .name-wall__item .sparkle { margin: 0 12px; }
-}
 
 /* ---- Respect du réglage système de réduction des animations (RGAA 13.8) ---- */
 @media (prefers-reduced-motion: reduce) {
