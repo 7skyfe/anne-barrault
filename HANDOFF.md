@@ -120,6 +120,35 @@ Points à intégrer dans le récit du processus de conception :
    (pas de visuel trouvé approprié/libre de droits pour illustrer des films précis), plutôt
    que de laisser croire que c'est un oubli.
 
+### h.0 Reformulation du CMS pour le dossier : à lire avant la section h
+Bryan doit présenter le dossier à l'oral devant un jury, dans une mise en situation où le
+projet est fictif mais traité comme un vrai mandat client (une galerie d'art à Paris). Il a
+demandé explicitement de ne pas présenter Decap CMS comme "la" solution professionnelle
+recommandée pour ce client, car ça ne fait pas assez sérieux/pro pour une soutenance orale,
+et de ne surtout PAS inventer une fausse recherche ou un faux outil pour paraître plus
+crédible (si le jury demande "tu as vraiment utilisé cet outil ?", une réponse fabriquée se
+retourne contre lui).
+
+La consigne pour le dossier est donc de **distinguer clairement deux choses** :
+1. **Ce qui a été codé pour l'exercice** (Decap CMS, réel, fonctionnel, gratuit) : à
+   présenter comme la démonstration technique livrée pour le séminaire, qui prouve la
+   compréhension d'un modèle de contenu structuré et d'un flux de publication versionné
+   par Git.
+2. **Ce qui serait recommandé pour un vrai mandat client** (une galerie d'art parisienne) :
+   un CMS headless couplé à un générateur de site statique, standard du marché pour ce
+   type de site vitrine à contenu riche géré par un client non technique. Recommandation
+   à documenter : **Storyblok** (édition visuelle en temps réel directement sur la page,
+   très utilisé par les agences créatives, offre gratuite) couplé à un générateur de site
+   statique (par exemple Astro) et un déploiement automatique (Netlify ou Vercel) qui
+   republie le site à chaque contenu validé. Alternative à mentionner si utile : Sanity.io,
+   plus orienté modélisation de contenu sur mesure, cohérent avec la structure de
+   collections déjà pensée ici (Expositions / Artistes / Projections).
+
+Ces deux CMS (Storyblok, Sanity.io) sont des produits réels et existants, donc les citer
+est honnête, à condition de rester dans le registre de la recommandation ("c'est ce que je
+préconiserais pour ce client") et de ne pas laisser entendre qu'ils ont été mis en œuvre
+sur ce projet, ce qui n'est pas le cas.
+
 ### h. Interface d'administration Decap CMS (séminaire 5, ajoutée après ce handoff)
 Après ce document, l'autre session Claude (celle qui gère le portfolio) a livré un patch
 supplémentaire par zip (pas d'accès en écriture au dépôt de son côté) contenant :
@@ -194,6 +223,23 @@ Voici un prompt prêt à copier-coller pour cette tâche précise :
 > concrètement le modèle de contenu dans le dossier, plutôt que de rester abstrait sur la
 > structure des champs. L'adresse dans `_data/galerie.yml` est déjà cohérente avec le
 > footer du site ("51 rue des Archives, 75003 Paris"), rien à harmoniser sur ce point.
+>
+> Point important : ce dossier sera défendu à l'oral devant un jury, dans une mise en
+> situation où le projet est fictif mais traité comme un vrai mandat pour une galerie
+> d'art parisienne. Ne présente donc PAS Decap CMS comme la solution que tu recommanderais
+> à ce client réel, et n'invente surtout pas une fausse recherche ou un faux outil pour
+> paraître plus crédible. Distingue clairement deux choses dans le texte : (1) Decap CMS
+> est la démonstration technique réellement codée pour l'exercice, qui prouve la
+> compréhension d'un modèle de contenu structuré et d'un flux de publication versionné ;
+> (2) pour un vrai mandat client, la recommandation professionnelle est un CMS headless
+> couplé à un générateur de site statique — nomme **Storyblok** (édition visuelle en temps
+> réel sur la page, standard chez les agences créatives, offre gratuite) associé à un
+> générateur de site statique comme Astro et un déploiement automatique Netlify ou Vercel
+> qui republie le site à chaque contenu validé. Tu peux citer Sanity.io en alternative,
+> plus orientée modélisation de contenu sur mesure. Storyblok et Sanity.io sont de vrais
+> produits existants, donc les citer est honnête tant que le texte reste au conditionnel
+> de la recommandation ("ce serait le choix pertinent pour ce client") et ne laisse pas
+> entendre qu'ils ont été mis en œuvre sur ce projet.
 
 ## 5. Où vérifier
 
