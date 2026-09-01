@@ -6,9 +6,7 @@
 <title>Portfolio — Refonte du site de la Galerie Anne Barrault — Bryan Dubreuil</title>
 <link rel="stylesheet" href="pf-fonts.css">
 <link rel="stylesheet" href="pf-base.css">
-<style>
-  @media screen { body { overflow-x: hidden; } }
-</style>
+<style>@media screen { body { overflow-x: hidden; } }</style>
 </head>
 <body>
 
@@ -33,7 +31,7 @@
 </section>
 
 <!-- ===== 2 LE PROJET EN BREF ===== -->
-<section class="page dark">
+<section class="page dark spread">
   <div class="step">01 &nbsp;/&nbsp; LE PROJET EN BREF</div>
   <div class="cols">
     <div class="col c45">
@@ -43,7 +41,7 @@
     </div>
 
     <div class="col">
-      <div class="frame" style="height:520px"><img src="assets/pf/pf-accueil.jpg" alt="Page d'accueil du site refondu"></div>
+      <div class="frame" style="height:515px"><img src="assets/pf/pf-accueil.jpg" alt="Page d'accueil du site refondu"></div>
       <div class="cap">Page d'accueil, prototype final</div>
     </div>
   </div>
@@ -60,19 +58,19 @@
     <div class="col">
       <div class="card" style="height:100%">
         <div class="h3">Le site est lent</div>
-        <p>Toutes les images se chargeaient dès l'arrivée sur la page d'accueil, soit environ 5 Mo transférés avant même d'avoir lu une ligne. Sur une connexion moyenne, le visiteur attend devant un écran vide.</p>
+        <p>Toutes les images se chargeaient dès l'arrivée sur la page d'accueil, soit environ 5 Mo transférés avant même d'avoir lu une ligne. Sur une connexion moyenne, le visiteur attend devant un écran vide.</p><p>Le problème n'est pas seulement technique. Une galerie dont le site rame donne l'impression d'un lieu qui ne s'occupe plus de rien, et c'est exactement le contraire du travail qui s'y fait.</p>
       </div>
     </div>
     <div class="col">
       <div class="card" style="height:100%">
         <div class="h3">L'information est noyée</div>
-        <p>Les horaires, l'adresse, les dates d'exposition étaient dispersés et traités visuellement comme le reste. Il fallait chercher pour trouver ce que tout le monde vient chercher en premier.</p>
+        <p>Les horaires, l'adresse, les dates d'exposition étaient dispersés et traités visuellement comme le reste. Il fallait chercher pour trouver ce que tout le monde vient chercher en premier.</p><p>Quand tout a la même importance, plus rien n'en a. C'est le point de départ de toute la hiérarchie que j'ai reconstruite ensuite.</p>
       </div>
     </div>
     <div class="col">
       <div class="card" style="height:100%">
         <div class="h3">L'écran contredit le lieu</div>
-        <p>Dans la galerie, les murs sont blancs et les œuvres parlent seules. En ligne, l'utilisateur subissait un flux d'images empilées sans respiration. Deux expériences opposées pour un même lieu.</p>
+        <p>Dans la galerie, les murs sont blancs et les œuvres parlent seules. En ligne, l'utilisateur subissait un flux d'images empilées sans respiration. Deux expériences opposées pour un même lieu.</p><p>Un visiteur qui découvre la galerie par son site n'y retrouve rien de ce qu'il verra en poussant la porte.</p>
       </div>
     </div>
   </div>
@@ -90,13 +88,15 @@
         <li>Mieux valoriser les artistes et les expositions</li>
         <li>Rendre l'identité curatoriale lisible dès l'accueil</li>
         <li>Un site rapide, tenable dans le temps, à petit budget</li>
+        <li>Un site que l'équipe puisse mettre à jour sans appeler un développeur</li>
       </ul>
+      <p class="muted" style="margin-top:14px">Ces quatre demandes tiennent en une phrase : montrer mieux, plus vite, et sans dépendre de personne.</p>
     </div>
   </div>
 </section>
 
 <!-- ===== 4 RECHERCHES ===== -->
-<section class="page">
+<section class="page spread">
   <div class="step">03 &nbsp;/&nbsp; RECHERCHES</div>
   <div class="cols">
     <div class="col c55">
@@ -127,7 +127,7 @@
 </section>
 
 <!-- ===== 5 LE CONCEPT ===== -->
-<section class="page dark">
+<section class="page dark spread">
   <div class="step">04 &nbsp;/&nbsp; LE CONCEPT</div>
   <div class="cols">
     <div class="col c45">
@@ -135,15 +135,16 @@
       <p class="lead">Le site ne cherche pas à impressionner. Il enlève tout ce qui n'est pas l'œuvre, l'artiste ou l'information utile, et il laisse le reste respirer.</p>
       <hr class="rule">
       <ul class="l">
-        <li><strong>Le vide est un matériau.</strong> Les blancs séparent les informations, à la place des traits, des cadres et des fonds colorés.</li>
+        <li><strong>Le vide fait partie du design.</strong> Les blancs séparent les informations, à la place des traits, des cadres et des fonds colorés.</li>
         <li><strong>La typographie porte la hiérarchie.</strong> La taille et la graisse suffisent à dire ce qui compte, sans décoration.</li>
         <li><strong>Rien ne bouge sans demande.</strong> Aucune animation d'entrée, aucun carrousel automatique, aucune fenêtre qui surgit.</li>
         <li><strong>Le visiteur garde la main.</strong> Thème clair ou sombre, effets visuels activés ou coupés : c'est lui qui règle son environnement.</li>
+        <li><strong>Le contenu est réel.</strong> Le programme des projections a été repris du site de la galerie plutôt qu'inventé. Une maquette crédible se remplit avec de vraies données.</li>
       </ul>
     </div>
 
     <div class="col">
-      <div class="frame" style="height:470px"><img src="assets/pf/pf-artistes.jpg" alt="Page Artistes, mur de noms"></div>
+      <div class="frame" style="height:515px"><img src="assets/pf/pf-artistes.jpg" alt="Page Artistes, mur de noms"></div>
       <div class="cap">Page Artistes : seize noms, aucune image. La page la plus légère du site, et celle qui porte le mieux le concept.</div>
     </div>
   </div>
@@ -162,7 +163,7 @@
       <p>Police système pour le corps de texte. Elle est déjà installée sur l'appareil du visiteur, donc aucun fichier à télécharger et une lecture nette sur tous les écrans.</p>
 
       <div class="h3 mt">Le cadre gris</div>
-      <p>Chaque visuel est posé sur un aplat gris avec 14 px de marge intérieure, comme un passe-partout d'encadrement. Ça donne sa signature au site et ça absorbe les différences de format entre les photos fournies par la galerie.</p>
+      <p>Chaque visuel est posé sur un fond gris avec 14 px de marge intérieure, comme le passe-partout d'un cadre. Ça donne sa signature au site et ça rattrape les différences de format entre les photos fournies par la galerie.</p>
     </div>
 
     <div class="col">
@@ -185,7 +186,7 @@
         </div>
       </div>
 
-      <div class="frame" style="height:360px"><img src="assets/pf/pf-fiche.jpg" alt="Fiche exposition"></div>
+      <div class="frame" style="height:588px"><img src="assets/pf/pf-fiche.jpg" alt="Fiche exposition"></div>
       <div class="cap">Fiche exposition : le cadre gris, la monospace en titre, le filet comme seul séparateur</div>
     </div>
   </div>
@@ -197,7 +198,7 @@
   <div class="cols">
     <div class="col c45">
       <div class="t-mono h2">Deux niveaux,<br>pas trois</div>
-      <p>J'ai mis l'arborescence à plat. Cinq rubriques accessibles depuis n'importe quelle page, deux niveaux de profondeur maximum, et les archives d'expositions traitées comme un filtre plutôt que comme une page à part.</p>
+      <p>J'ai mis l'arborescence à plat. Cinq rubriques accessibles depuis n'importe quelle page, deux niveaux maximum, et les archives d'expositions traitées comme un filtre plutôt que comme une page à part.</p>
 
       <div class="h3 mt">Les cinq rubriques</div>
       <table class="t">
@@ -218,7 +219,7 @@
         <li><strong>La recherche.</strong> Un collectionneur cherche une exposition précise. Filtre par catégorie et recherche instantanée dans le catalogue.</li>
       </ul>
 
-      <div class="frame" style="height:330px;margin-top:26px"><img src="assets/pf/pf-menu.jpg" alt="Menu plein écran"></div>
+      <div class="frame" style="height:507px;margin-top:26px"><img src="assets/pf/pf-menu.jpg" alt="Menu plein écran"></div>
       <div class="cap">Le menu plein écran : cinq entrées, et la seule qui fait sortir du site est annoncée comme telle</div>
     </div>
   </div>
@@ -231,12 +232,12 @@
     <div class="col c35">
       <div class="t-mono h2">Un vrai site,<br>pas une suite<br>d'écrans</div>
       <p>Les maquettes ont été faites sur Figma, avec un design system complet : couleurs, typographies, composants. Ensuite j'ai choisi de coder le prototype plutôt que de le simuler.</p>
-      <p>Ça change tout au moment de tester. Le site s'ouvre sur le téléphone du testeur, les temps de chargement sont réels, et si une animation rame, elle rame pour de vrai.</p>
+      <p>Ça change beaucoup de choses au moment de tester. Le site s'ouvre sur le téléphone du testeur, les temps de chargement sont réels, et si une animation rame, elle rame pour de vrai.</p>
       <hr class="rule">
       <div class="kv" style="gap:38px">
         <div><div class="k">PAGES</div><div class="v">8</div></div>
         <div><div class="k">THÈMES</div><div class="v">2</div></div>
-        <div><div class="k">POIDS DU CODE</div><div class="v">30 Ko</div></div>
+        <div><div class="k">POIDS DU CODE</div><div class="v">48 Ko</div></div>
         <div><div class="k">DÉPENDANCES</div><div class="v">0</div></div>
       </div>
     </div>
@@ -244,17 +245,17 @@
     <div class="col">
       <div style="display:flex;gap:24px">
         <div style="flex:1">
-          <div class="frame" style="height:400px"><img src="assets/pf/pf-expositions.jpg" alt="Page Expositions"></div>
+          <div class="frame" style="height:397px"><img src="assets/pf/pf-expositions.jpg" alt="Page Expositions"></div>
           <div class="cap">Catalogue filtrable</div>
         </div>
         <div style="flex:1">
-          <div class="frame" style="height:400px"><img src="assets/pf/pf-sombre.jpg" alt="Accueil en thème sombre"></div>
+          <div class="frame" style="height:397px"><img src="assets/pf/pf-sombre.jpg" alt="Accueil en thème sombre"></div>
           <div class="cap">Thème sombre, mémorisé d'une visite à l'autre</div>
         </div>
       </div>
       <div class="card card--fill" style="margin-top:28px">
         <div class="h3">Le choix technique</div>
-        <p>HTML, CSS et JavaScript écrits à la main, aucun framework, aucune bibliothèque. Une galerie doit pouvoir faire reprendre son site par n'importe quel prestataire dans cinq ans, sans avoir à mettre à jour une pile de dépendances.</p>
+        <p>HTML, CSS et JavaScript écrits à la main, aucun framework, aucune bibliothèque. Une galerie doit pouvoir faire reprendre son site par n'importe quel prestataire dans cinq ans, sans avoir à mettre à jour une pile de dépendances.</p><p>Le revers, c'est que rien n'est fait à ma place : la structure, la compatibilité entre navigateurs et l'accessibilité sont de mon ressort du début à la fin. Sur un site de huit pages, le calcul reste largement favorable.</p>
       </div>
     </div>
   </div>
@@ -265,18 +266,18 @@
   <div class="step">08 &nbsp;/&nbsp; LE PROTOTYPE, DESKTOP</div>
   <div class="cols">
     <div class="col c60">
-      <div class="frame" style="height:470px"><img src="assets/pf/pf-accueil.jpg" alt="Accueil desktop"></div>
+      <div class="frame" style="height:779px"><img src="assets/pf/pf-accueil.jpg" alt="Accueil desktop"></div>
       <div class="cap">Accueil : pas de barre de navigation opaque, le logo et les contrôles flottent au-dessus de la photo</div>
     </div>
     <div class="col">
-      <div class="t-mono h2" style="font-size:56px">Ce qui se joue<br>en haut de page</div>
+      <div class="t-mono h2" style="font-size:56px">Ce qu'il y a<br>en haut de page</div>
       <ul class="l">
-        <li><strong>Un hero qui occupe 78 % de la hauteur</strong>, borné entre 560 et 820 px pour tenir aussi bien sur un portable que sur un écran large.</li>
+        <li><strong>Un hero qui occupe 78 % de la hauteur</strong>, limité entre 560 et 820 px pour tenir aussi bien sur un portable que sur un écran large.</li>
         <li><strong>Un voile en dégradé</strong> sur le bas de la photo garantit la lisibilité du titre quelle que soit l'image envoyée par la galerie.</li>
         <li><strong>Trois contrôles seulement</strong> : thème, effets visuels, menu. Les trois rubriques principales apparaissent en toutes lettres au-delà de 1200 px.</li>
         <li><strong>Une alternance en quinconce</strong> pour les expositions, qui casse la grille rigide des galeries en ligne.</li>
       </ul>
-      <div class="frame" style="height:300px;margin-top:24px"><img src="assets/pf/pf-projections.jpg" alt="Page Projections"></div>
+      <div class="frame" style="height:248px;margin-top:24px"><img src="assets/pf/pf-projections.jpg" alt="Page Projections"></div>
       <div class="cap">Projections : dates à venir en liste, séances passées en carrousel</div>
     </div>
   </div>
@@ -289,7 +290,7 @@
     <div class="col c35">
       <div class="t-mono h2">Un seul code,<br>aucun contenu<br>masqué</div>
       <p>Pas de version mobile séparée. Un seul point de bascule à 860 px, les colonnes s'empilent, les marges se resserrent, les titres se calent sur la largeur de l'écran.</p>
-      <p>Rien n'est retiré au passage. Un contenu qu'on masque en mobile est un contenu qu'on ne remettra jamais, et une galerie sans équipe technique ne peut pas maintenir deux sites en parallèle.</p>
+      <p>Rien n'est retiré au passage. Un contenu qu'on cache en mobile est un contenu qu'on ne remettra jamais, et une galerie sans équipe technique ne peut pas maintenir deux sites en parallèle.</p>
       <hr class="rule">
       <div class="h3">Ce que le mobile a révélé</div>
       <p class="muted">La structure a tenu telle quelle. Ce sont les réglages hérités du desktop qui ont cassé : une largeur de carte, une marge de puce, une croix de fermeture hors de portée du pouce.</p>
@@ -297,10 +298,10 @@
 
     <div class="col">
       <div style="display:flex;gap:22px">
-        <div style="flex:1"><div class="frame" style="height:494px"><img src="assets/pf/pf-m-accueil.jpg" alt="Accueil mobile"></div><div class="cap">Accueil</div></div>
-        <div style="flex:1"><div class="frame" style="height:494px"><img src="assets/pf/pf-m-expos.jpg" alt="Expositions mobile"></div><div class="cap">Expositions, filtre ouvert</div></div>
-        <div style="flex:1"><div class="frame" style="height:494px"><img src="assets/pf/pf-m-artistes.jpg" alt="Artistes mobile"></div><div class="cap">Artistes</div></div>
-        <div style="flex:1"><div class="frame" style="height:494px"><img src="assets/pf/pf-m-menu.jpg" alt="Menu mobile"></div><div class="cap">Menu plein écran</div></div>
+        <div style="flex:1"><div class="frame" style="height:642px"><img src="assets/pf/pf-m-accueil.jpg" alt="Accueil mobile"></div><div class="cap">Accueil</div></div>
+        <div style="flex:1"><div class="frame" style="height:642px"><img src="assets/pf/pf-m-expos.jpg" alt="Expositions mobile"></div><div class="cap">Expositions, filtre ouvert</div></div>
+        <div style="flex:1"><div class="frame" style="height:642px"><img src="assets/pf/pf-m-artistes.jpg" alt="Artistes mobile"></div><div class="cap">Artistes</div></div>
+        <div style="flex:1"><div class="frame" style="height:642px"><img src="assets/pf/pf-m-menu.jpg" alt="Menu mobile"></div><div class="cap">Menu plein écran</div></div>
       </div>
     </div>
   </div>
@@ -320,6 +321,9 @@
       <hr class="rule">
       <div class="h3">Ce que j'ai retiré en route</div>
       <p class="muted">L'apparition des blocs au scroll, l'agrandissement des images au survol qui faisait bouger la grille, et le défilement automatique du carrousel. Trois idées agréables une fois, pénibles la deuxième.</p>
+      <hr class="rule">
+      <div class="h3">Comment je choisis une durée</div>
+      <p class="muted">Je pars du geste, pas du chiffre. Un panneau qui descend doit avoir l'air lourd, donc il prend 500 ms et ralentit à la fin. Un changement de couleur doit être immédiat, donc 200 ms suffisent. Quand j'hésite, je teste les deux et je garde celle qu'on ne remarque pas.</p>
     </div>
 
     <div class="col">
@@ -334,7 +338,7 @@
       </table>
       <div class="card" style="margin-top:30px">
         <div class="h3">Accessibilité</div>
-        <p>Le site respecte le réglage système de réduction des animations : si le visiteur l'a activé sur son appareil, toutes les transitions sont coupées. Contraste maximal, navigation au clavier avec prise de focus visible et lien d'évitement en tête de page.</p>
+        <p>Le référentiel français d'accessibilité, le RGAA, demande un contraste de 4,5 pour 1 : le site est à 21 pour 1. Il respecte aussi le réglage système de réduction du mouvement, la navigation au clavier avec prise de focus visible, le lien d'évitement en tête de page et une description sur chacune des soixante-douze images. L'audit complet des cent six critères reste à mener.</p>
       </div>
     </div>
   </div>
@@ -349,6 +353,9 @@
       <div class="t-mono h2">Cinq personnes,<br>quatre tâches,<br>aucune aide</div>
       <p>Deux habituées des galeries, deux personnes qui n'y vont jamais, une personne de plus de 60 ans pour la lisibilité. Trois sur ordinateur, deux sur téléphone.</p>
       <p>Méthode de la pensée à voix haute : je donne une tâche, je me tais, je note. Aucune aide, même quand ça bloque, sinon je teste mon explication et pas l'interface.</p>
+      <hr class="rule">
+      <div class="h3">Pourquoi cinq personnes</div>
+      <p>Au-delà de cinq, on retombe sur les mêmes problèmes et le temps passé ne rapporte plus grand-chose. En dessous, on passe à côté de trop de choses. Cinq personnes, c'est aussi ce qu'on peut réunir en une soirée, ce qui compte quand on veut tester avant de corriger plutôt que l'inverse.</p>
     </div>
 
     <div class="col">
@@ -387,19 +394,20 @@
     <div class="col c45">
       <div style="display:flex;gap:20px;align-items:flex-start">
         <div style="flex:1">
-          <div class="frame" style="height:110px"><img src="assets/pf/pf-avant-header.jpg" alt="Header avant correction"></div>
+          <div class="frame" style="height:143px"><img src="assets/pf/pf-avant-header.jpg" alt="Header avant correction"></div>
           <div class="cap">AVANT — un bouton marqué on / off, aucun mot pour dire ce qu'il fait</div>
         </div>
         <div style="flex:1">
-          <div class="frame" style="height:110px"><img src="assets/pf/pf-apres-header.jpg" alt="Header après correction"></div>
+          <div class="frame" style="height:143px"><img src="assets/pf/pf-apres-header.jpg" alt="Header après correction"></div>
           <div class="cap">APRÈS — l'étiquette Effets, plus les rubriques en toutes lettres</div>
         </div>
       </div>
 
       <div class="card card--fill" style="margin-top:30px">
-        <div class="h3">L'arbitrage le plus important</div>
-        <p>Au départ, ce bouton devait couper les images : le site restait en texte seul tant qu'on ne survolait rien. En construisant le prototype, j'ai compris que ça se retournait contre la galerie. Son métier est de montrer des œuvres, et on ne fait pas travailler un visiteur pour voir une toile.</p>
-        <p>J'ai gardé l'idée et déplacé la cible. Le bouton ne coupe plus les images, il coupe les effets : flou, transparence, accent coloré. Le silence visuel reste, il porte sur le bruit et plus sur les œuvres. Et comme ces effets sont ce qui coûte le plus cher à afficher, le gain de performance est réel.</p>
+        <div class="h3">La décision la plus importante</div>
+        <p>Le mode sobre n'est pas imposé : par défaut les œuvres s'affichent, c'est le visiteur qui décide de les couper. C'est ce qui a débloqué la question posée au séminaire 2, où le site restait en texte seul tant qu'on ne survolait rien. Une galerie ne peut pas cacher ses œuvres par défaut, mais elle peut proposer de les mettre de côté.</p>
+        <p>En position off, le site retire tout ce qui est lourd : les visuels ne sont plus téléchargés et laissent la place à leur description écrite, les animations et les flous disparaissent. Sur l'accueil, deux fichiers image sont demandés au serveur au lieu de dix.</p>
+        <p>Les tests ont validé l'idée et rejeté le mot. Personne ne devine ce que fait un bouton marqué on, donc l'étiquette est devenue Effets et l'état s'affiche juste à côté.</p>
       </div>
     </div>
 
@@ -412,7 +420,7 @@
         <tr><td>La sortie vers la boutique invisible</td><td>Flèche sortante et ouverture en nouvel onglet. La mention écrite a été testée puis retirée</td></tr>
         <tr><td>Des noms d'artistes sans fiche</td><td>Testés en estompé puis rétablis : une liste à moitié grise donne une galerie en sommeil</td></tr>
         <tr><td>La croix du menu hors de portée du pouce</td><td>Croix ramenée en bas d'écran, fermeture par appui sur le fond</td></tr>
-        <tr><td>Le mur de noms illisible sur téléphone</td><td>Puce étoilée passée devant le nom, règle étendue à tous les gabarits</td></tr>
+        <tr><td>Le mur de noms illisible sur téléphone</td><td>Puce étoilée passée devant le nom, règle étendue à toutes les tailles d'écran</td></tr>
         <tr><td>Les animations non réductibles</td><td>Prise en compte du réglage système de réduction du mouvement</td></tr>
         <tr><td>L'image du hero mal cadrée</td><td>Recadrage plein cadre quel que soit le format de la photo</td></tr>
       </table>
@@ -427,7 +435,7 @@
     <div class="col c55">
       <div class="t-mono h2">Ce que le site fait<br>mieux qu'avant</div>
       <div class="stat" style="margin-top:10px">
-        <div><div class="n">30 Ko</div><div class="lbl">de code pour tout le site, sans aucune bibliothèque externe</div></div>
+        <div><div class="n">48 Ko</div><div class="lbl">de code pour tout le site, sans aucune bibliothèque externe</div></div>
         <div><div class="n">2</div><div class="lbl">clics maximum pour atteindre n'importe quelle rubrique</div></div>
         <div><div class="n">21:1</div><div class="lbl">de contraste, très au-delà du minimum exigé par le RGAA</div></div>
       </div>
@@ -442,7 +450,7 @@
       <div class="cap">Page À propos</div>
       <div class="card" style="margin-top:26px">
         <div class="h3">Les suites</div>
-        <p>Une interface d'administration pour que la galerie change ses expositions sans passer par un développeur, et le branchement du lien Boutique sur le vrai compte marchand. Ces deux chantiers sont documentés et chiffrés pour le commanditaire.</p>
+        <p>Une interface d'administration pour que la galerie change ses expositions sans passer par un développeur. Le modèle de contenu est déjà écrit, collections et champs obligatoires compris, il reste à le brancher sur les pages. Avec le raccordement du lien Boutique au vrai compte marchand, ce sont les deux chantiers documentés et chiffrés pour le commanditaire.</p>
       </div>
     </div>
   </div>
@@ -459,7 +467,7 @@
         <tr><th>Domaine</th><th>Mise en pratique</th></tr>
         <tr><td><strong>Stratégie</strong></td><td>Analyse de l'existant, positionnement, cadrage du besoin avec le commanditaire</td></tr>
         <tr><td><strong>UX</strong></td><td>Architecture de l'information, parcours utilisateurs, wireframes, protocole de test et analyse des résultats</td></tr>
-        <tr><td><strong>UI</strong></td><td>Direction artistique, système typographique, design system Figma, déclinaison responsive</td></tr>
+        <tr><td><strong>UI</strong></td><td>Direction artistique, choix des typographies, design system Figma, adaptation aux écrans</td></tr>
         <tr><td><strong>Motion</strong></td><td>Micro-interactions, transitions, courbes d'accélération, arbitrage entre effet et lisibilité</td></tr>
         <tr><td><strong>Intégration</strong></td><td>HTML, CSS et JavaScript sans framework, thèmes par variables, mémorisation des préférences</td></tr>
         <tr><td><strong>Accessibilité</strong></td><td>Contrastes, navigation clavier, lien d'évitement, réduction du mouvement, sobriété numérique</td></tr>
@@ -491,8 +499,7 @@
 <script>
 (() => {
   const fit = () => { document.body.style.zoom = Math.min(1, (window.innerWidth - 24) / 1920); };
-  fit();
-  window.addEventListener('resize', fit);
+  fit(); window.addEventListener('resize', fit);
   window.addEventListener('beforeprint', () => { document.body.style.zoom = 1; });
   window.addEventListener('afterprint', fit);
 })();

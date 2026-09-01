@@ -198,3 +198,11 @@ table.t.t--compact th, table.t.t--compact td { padding: 8px 12px 8px 0; font-siz
 .page.spread { justify-content: space-between; }
 .page.spread > .cols { flex: 0 1 auto; }
 .page.spread > .cols > .col { justify-content: space-between; }
+
+/* Colonne plus courte que sa voisine : espace reparti entre les blocs */
+/* repartition abandonnee : on remplit avec du contenu, pas avec du vide */
+.col.col--spread { justify-content: flex-start; }
+
+/* Cartes en colonnes egales : elles occupent toute la hauteur de leur colonne */
+.col > .card[style*="height:100%"], .col > .card:only-child { flex: 1 1 auto; display: flex; flex-direction: column; }
+.col > .card:only-child > p:last-child { margin-bottom: 0; }

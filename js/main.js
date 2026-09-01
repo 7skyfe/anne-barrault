@@ -29,7 +29,42 @@
     root.dataset.glass = root.dataset.glass === 'on' ? 'off' : 'on';
     localStorage.setItem('ab-glass', root.dataset.glass);
     syncGlassLabel();
+    applySobre();
   });
+
+  /* ---------- Mode sobre ----------
+     En mode off, chaque visuel laisse la place a sa description ecrite et son
+     fichier n'est plus telecharge : l'adresse de l'image est mise de cote et
+     rendue seulement quand le visiteur rallume les effets. */
+  const contentImages = () =>
+    [...document.querySelectorAll('main img, .hero img, footer img')]
+      .filter((img) => (img.className || '').indexOf('logo') === -1);
+
+  contentImages().forEach((img) => {
+    if (img.parentElement.querySelector('.img-text')) return;
+    const alt = img.getAttribute('alt');
+    if (!alt) return;
+    const p = document.createElement('p');
+    p.className = 'img-text';
+    p.textContent = alt;
+    img.insertAdjacentElement('afterend', p);
+  });
+
+  const applySobre = () => {
+    const off = root.dataset.glass === 'off';
+    contentImages().forEach((img) => {
+      if (off) {
+        if (img.getAttribute('src')) {
+          img.dataset.src = img.getAttribute('src');
+          img.removeAttribute('src');
+        }
+      } else if (img.dataset.src) {
+        img.setAttribute('src', img.dataset.src);
+        delete img.dataset.src;
+      }
+    });
+  };
+  applySobre();
 
   /* ---------- Menu plein écran ---------- */
   const menuToggle = document.getElementById('menuToggle');

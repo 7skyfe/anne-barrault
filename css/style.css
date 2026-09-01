@@ -1097,3 +1097,83 @@ input:focus-visible,
   .expo-list-card__image { flex-basis: auto; width: 100%; }
   .expo-list-card__title { font-size: 19px; }
 }
+
+/* =========================================================
+   MODE SOBRE (bouton Effets sur off)
+   Le mode off ne coupe pas seulement les flous : il retire tout
+   ce qui est lourd a charger ou a afficher. Les visuels laissent
+   la place a leur description ecrite, les animations sont
+   neutralisees, l'accent colore disparait.
+   Objectif : un site utilisable sur un appareil ancien ou une
+   connexion faible, et une consommation de donnees reduite.
+   ========================================================= */
+
+/* ---- 1. Les visuels laissent la place a leur description ---- */
+:root[data-glass="off"] main img,
+:root[data-glass="off"] .hero img,
+:root[data-glass="off"] footer img:not([class*="logo"]) { display: none !important; }
+
+.img-text {
+  display: none;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  padding: 18px;
+  border: 1px dashed var(--border);
+  background: transparent;
+}
+:root[data-glass="off"] .img-text { display: block; }
+:root[data-glass="off"] .img-frame,
+:root[data-glass="off"] .card__image,
+:root[data-glass="off"] .expo-list-card__image,
+:root[data-glass="off"] .feature__image,
+:root[data-glass="off"] .expo-hero__image,
+:root[data-glass="off"] .about-intro__image,
+:root[data-glass="off"] .projection-card__thumb,
+:root[data-glass="off"] .carousel-card {
+  background: transparent;
+  padding: 0;
+  aspect-ratio: auto;
+  min-height: 0;
+}
+:root[data-glass="off"] .hero {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  display: block;
+  padding: 190px var(--margin) 64px;
+  background: var(--bg);
+}
+:root[data-glass="off"] .hero__title-block,
+:root[data-glass="off"] .hero__meta-block {
+  position: static;
+  left: auto; right: auto; bottom: auto;
+  max-width: 100%;
+}
+:root[data-glass="off"] .hero__meta-block {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  align-items: flex-start;
+}
+:root[data-glass="off"] .hero__wash,
+:root[data-glass="off"] .hero__glass { display: none; }
+:root[data-glass="off"] .hero__title { color: var(--text); }
+
+/* ---- 2. Plus aucune animation ---- */
+:root[data-glass="off"] *,
+:root[data-glass="off"] *::before,
+:root[data-glass="off"] *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* ---- 3. Plus de flou ni de transparence ---- */
+:root[data-glass="off"] .menu-overlay,
+:root[data-glass="off"] .nav,
+:root[data-glass="off"] .filter-panel {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
