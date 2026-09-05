@@ -21,7 +21,7 @@ collections:
     folder: "_expositions"
     create: true
     slug: "{{slug}}"
-    summary: "{{titre}} — {{artiste}}"
+    summary: "{{titre}} · {{artiste}}"
     fields:
       - { name: "titre", label: "Titre de l'exposition", widget: "string" }
       - { name: "artiste", label: "Artiste", widget: "string" }
