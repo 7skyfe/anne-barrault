@@ -766,7 +766,9 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .name-wall {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px 48px;
+  /* Ecart de ligne genereux : un nom un peu long passe sur 2 lignes plutot
+     que de deborder, l'ecart evite qu'il touche la ligne suivante. */
+  gap: 22px 48px;
   padding: 8px var(--margin) 56px;
 }
 .name-wall__item {
@@ -774,7 +776,9 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  align-items: center;
+  /* flex-start plutot que center : si un nom passe sur 2 lignes, l'etoile
+     reste calee sur la 1re ligne au lieu de flotter entre les deux. */
+  align-items: flex-start;
   gap: 24px;
   font-family: var(--font-display);
   font-weight: 700;
@@ -1131,7 +1135,11 @@ input:focus-visible,
     align-items: center;
     gap: 12px;
     width: 100%;
-    font-size: clamp(22px, 7.4vw, 34px);
+    min-width: 0;
+    /* Calibre pour le nom le plus long de la liste reelle (~21 caracteres) :
+       7.4vw etait calibre pour des noms de 15 caracteres maximum et
+       debordait horizontalement des qu'un nom plus long arrivait. */
+    font-size: clamp(16px, 6.2vw, 30px);
     white-space: nowrap;
     padding: 9px 0;
     border-bottom: 1px solid var(--border);
@@ -1196,7 +1204,7 @@ input:focus-visible,
   .expo-hero__title { font-size: clamp(34px, 5vw, 56px); }
 
   /* ---- Mur d'artistes : deux colonnes, taille intermediaire ---- */
-  .name-wall { gap: 4px 32px; }
+  .name-wall { gap: 18px 32px; }
   .name-wall__item { font-size: clamp(26px, 3.4vw, 44px); gap: 16px; }
 
   /* ---- Carrousel ---- */
