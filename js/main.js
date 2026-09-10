@@ -178,6 +178,26 @@
   const filterItems = document.querySelectorAll('[data-filter-item]');
   const categoryChecks = filterDropdown ? filterDropdown.querySelectorAll('input[type="checkbox"]') : [];
 
+  /* ---------- Grille Expositions : pas de carte seule en bout de ligne (tablette) ----
+     Sur le palier tablette (701-1279px), la grille passe a 2 colonnes. Avec un nombre
+     de cartes visibles impair (9 par defaut, ou tout autre total apres filtrage), la
+     derniere se retrouve seule avec un grand vide a cote. On la masque via une classe
+     (jamais via nth-child, qui casserait des que le filtre change les cartes visibles :
+     cf. la grille d'Expositions plus haut). Elle reste entiere en mobile (1 colonne) et
+     PC (3 colonnes), ou l'impair ne pose pas ce probleme. */
+  const expoGrid = document.querySelector('.expo-grid');
+  const applyGridParity = () => {
+    if (!expoGrid) return;
+    const cards = Array.from(expoGrid.querySelectorAll('.expo-list-card'));
+    cards.forEach((c) => c.classList.remove('is-parity-hidden'));
+    const isTabletTwoCol = window.matchMedia('(min-width: 701px) and (max-width: 1279px)').matches;
+    if (!isTabletTwoCol) return;
+    const visible = cards.filter((c) => c.style.display !== 'none');
+    if (visible.length % 2 === 1) visible[visible.length - 1].classList.add('is-parity-hidden');
+  };
+  applyGridParity();
+  window.addEventListener('resize', applyGridParity);
+
   if (filterItems.length) {
     const applyFilters = () => {
       const query = filterSearch ? filterSearch.value.trim().toLowerCase() : '';
@@ -189,6 +209,7 @@
         const matchesCategory = activeCategories.length === 0 || activeCategories.includes(category);
         item.style.display = (matchesQuery && matchesCategory) ? '' : 'none';
       });
+      applyGridParity();
     };
     if (filterSearch) filterSearch.addEventListener('input', applyFilters);
     categoryChecks.forEach((c) => c.addEventListener('change', applyFilters));
