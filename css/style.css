@@ -572,11 +572,12 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
    ========================================================= */
 .projection-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   padding: 0 var(--margin) 48px;
 }
 .projection-card {
+  display: block;
   position: relative;
   aspect-ratio: 3 / 4;
   border-radius: 4px;
@@ -646,6 +647,7 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
   color: var(--text);
 }
 .carousel-card {
+  display: block;
   position: relative;
   flex: 0 0 640px;
   max-width: 55%;
@@ -1216,13 +1218,6 @@ input:focus-visible,
   .expo-bio__portrait { flex-basis: 34%; }
   .about-intro__text { font-size: 19px; }
 
-  /* ---- Projections : cinq vignettes en ligne devenaient des timbres ----
-     Avec 5 cartes sur 3 colonnes, la 2e ligne ne contient que 2 cartes et
-     laisse un trou visible a la 3e place. On masque les 2 dernieres
-     seances (visibles quand meme en mobile 2 colonnes et sur PC en 5
-     colonnes) pour garder une ligne pleine et coherente. */
-  .projection-row { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .projection-row .projection-card:nth-child(n+4) { display: none; }
 
   /* ---- Pied de page ---- */
   .footer__links { gap: 56px; flex-wrap: wrap; }

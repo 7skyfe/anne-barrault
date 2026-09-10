@@ -60,26 +60,21 @@
   <p class="projection-intro">Carte blanche à Marie Losier &amp; Sing Sing, mardi 29 septembre 2026, 20h<br>L'Archipel Cinéma, 17 boulevard de Strasbourg, 75010 Paris, 10€</p>
 
   <section class="projection-row">
-    <div class="projection-card">
+    <!-- Chaque carte renvoie vers la fiche dediee de la seance si elle existe,
+         sinon vers le site de L'Archipel Cinema (lieu qui accueille la
+         projection). A remplacer par les fiches reelles une fois recues. -->
+    <a class="projection-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
       <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/a-divided-world.jpg" alt="Photo d'illustration (paysage animalier en noir et blanc), pour la séance A Divided World">
       <div class="projection-card__meta"><div><div class="date">A Divided World</div><div class="time">Arne Sucksdorff, 1948</div></div></div>
-    </div>
-    <div class="projection-card">
+    </a>
+    <a class="projection-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
       <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/a-matter-of-baobab.jpg" alt="Photo d'illustration (baobab), pour la séance A Matter of Baobab">
       <div class="projection-card__meta"><div><div class="date">A Matter of Baobab</div><div class="time">Pola Chapelle, 1970</div></div></div>
-    </div>
-    <div class="projection-card">
+    </a>
+    <a class="projection-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
       <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/nightcall.jpg" alt="Photo d'illustration (cabine téléphonique de nuit), pour la séance Nightcall">
       <div class="projection-card__meta"><div><div class="date">Nightcall</div><div class="time">Jacques Tourneur, 1963</div></div></div>
-    </div>
-    <div class="projection-card">
-      <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/dixieland-droopy.jpg" alt="Photo d'illustration (musicien de jazz), pour la séance Dixieland Droopy">
-      <div class="projection-card__meta"><div><div class="date">Dixieland Droopy</div><div class="time">Tex Avery, 1954</div></div></div>
-    </div>
-    <div class="projection-card">
-      <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/day-is-done.jpg" alt="Photo d'illustration (salle de classe vide), pour la séance Day is Done">
-      <div class="projection-card__meta"><div><div class="date">Day is Done</div><div class="time">Mike Kelley, 2005</div></div></div>
-    </div>
+    </a>
   </section>
 
   <h2 class="section-heading">Projections déjà passées</h2>
@@ -90,26 +85,28 @@
     </button>
     <div class="carousel-viewport">
       <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-card">
+        <!-- Meme principe que ci-dessus : lien vers la fiche reelle si elle existe,
+             sinon vers le site de L'Archipel Cinema. -->
+        <a class="carousel-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
           <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/insectes-de-feu.jpg" alt="Photo d'illustration (insecte), pour la séance Les insectes de feu">
           <div class="carousel-card__meta"><div class="date">31 mars 2026</div><div class="desc">Carte blanche à Guillaume Pinard : « Les insectes de feu »</div></div>
-        </div>
-        <div class="carousel-card is-active">
+        </a>
+        <a class="carousel-card is-active" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
           <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/ibrahim-meite-sikely.jpg" alt="Photo d'illustration (projecteur de cinéma), pour la carte blanche à Ibrahim Meïté Sikely">
           <div class="carousel-card__meta"><div class="date">23 septembre 2025</div><div class="desc">Carte blanche à Ibrahim Meïté Sikely</div></div>
-        </div>
-        <div class="carousel-card">
+        </a>
+        <a class="carousel-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
           <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/tresor-des-poubelles.jpg" alt="Photo d'illustration (poubelle), pour la séance Le trésor des poubelles">
           <div class="carousel-card__meta"><div class="date">16 avril 2025</div><div class="desc">« Le trésor des poubelles », présenté par Amélie Garin-Davet</div></div>
-        </div>
-        <div class="carousel-card">
+        </a>
+        <a class="carousel-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
           <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/liv-schulman.jpg" alt="Photo d'illustration (peinture abstraite colorée), pour la séance de Liv Schulman">
           <div class="carousel-card__meta"><div class="date">27 novembre 2024</div><div class="desc">Liv Schulman présente</div></div>
-        </div>
-        <div class="carousel-card">
+        </a>
+        <a class="carousel-card" href="https://www.larchipelcinema.com/" target="_blank" rel="noopener noreferrer">
           <img loading="lazy" decoding="async" class="placeholder-photo" src="assets/projections/marie-losier.jpg" alt="Photo d'illustration (caméra argentique), pour la carte blanche à Marie Losier">
           <div class="carousel-card__meta"><div class="date">4 juillet 2023</div><div class="desc">Carte blanche à Marie Losier</div></div>
-        </div>
+        </a>
       </div>
     </div>
     <button class="carousel-arrow" id="carNext" aria-label="Suivant">
