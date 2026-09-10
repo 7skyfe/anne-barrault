@@ -119,7 +119,7 @@
         </div>
         <label class="newsletter-form__consent">
           <input type="checkbox" required>
-          <span>J'accepte les <a href="#">conditions générales d'utilisation</a> et de recevoir la newsletter de la galerie.</span>
+          <span>J'accepte les <a href="cgu.html">conditions générales d'utilisation</a> et de recevoir la newsletter de la galerie.</span>
         </label>
       </form>
     </div>
@@ -131,12 +131,37 @@
       <div class="footer__contact"><p>09 51 70 02 43</p><p>51 RUE DES ARCHIVES, 75003 PARIS</p></div>
     </div>
     <div class="footer__links">
-      <ul><li><a href="artistes.html">ARTISTES</a></li><li><a href="expositions.html">EXPOSITIONS & EVENEMENTS</a></li><li><a href="a-propos.html">A PROPOS</a></li><li><a href="#">NOUS REJOINDRE</a></li></ul>
-      <ul><li><a href="#">CONDITIONS GÉNÉRALES D'UTILISATION</a></li><li><a href="#">POLITIQUE DE CONFIDENTIALITÉ</a></li><li><a href="#">GESTION DES COOKIES</a></li><li><a href="#">CHARTE DES PARTENARIATS</a></li></ul>
+      <ul><li><a href="artistes.html">ARTISTES</a></li><li><a href="expositions.html">EXPOSITIONS & EVENEMENTS</a></li><li><a href="a-propos.html">A PROPOS</a></li><li><a href="nous-rejoindre.html">NOUS REJOINDRE</a></li></ul>
+      <ul><li><a href="cgu.html">CONDITIONS GÉNÉRALES D'UTILISATION</a></li><li><a href="confidentialite.html">POLITIQUE DE CONFIDENTIALITÉ</a></li><li><a href="gestion-cookies.html">GESTION DES COOKIES</a></li><li><a href="charte-partenariats.html">CHARTE DES PARTENARIATS</a></li></ul>
     </div>
   </div>
 </footer>
 
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Gestion des cookies">
+  <div class="cookie-banner__panel">
+    <p class="cookie-banner__text">Ce site utilise des cookies nécessaires à son fonctionnement (thème, effets). Vous pouvez aussi activer la mesure d'audience et les contenus tiers, désactivés par défaut, et changer d'avis à tout moment depuis le pied de page. <a href="gestion-cookies.html">En savoir plus</a>.</p>
+    <div class="cookie-banner__prefs" id="cookieBannerPrefs" hidden>
+      <div class="cookie-pref">
+        <div class="cookie-pref__row">
+          <div><div class="cookie-pref__title">Mesure d'audience</div><p class="cookie-pref__desc">Fréquentation des pages, pour comprendre ce qui est consulté.</p></div>
+          <button class="cookie-toggle" type="button" role="switch" aria-checked="false" data-cookie-cat="analytics" aria-label="Mesure d'audience"><span class="cookie-toggle__knob"></span></button>
+        </div>
+        <div class="cookie-pref__row">
+          <div><div class="cookie-pref__title">Contenus tiers</div><p class="cookie-pref__desc">Vidéos et cartes intégrées depuis d'autres sites.</p></div>
+          <button class="cookie-toggle" type="button" role="switch" aria-checked="false" data-cookie-cat="embeds" aria-label="Contenus tiers"><span class="cookie-toggle__knob"></span></button>
+        </div>
+      </div>
+    </div>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-banner__link" data-cookie-action="customize">Personnaliser</button>
+      <div class="cookie-banner__buttons">
+        <button type="button" class="btn-outline btn-outline--ghost" data-cookie-action="refuse">Tout refuser</button>
+        <button type="button" class="btn-outline" data-cookie-action="save">Enregistrer mes choix</button>
+        <button type="button" class="btn-outline" data-cookie-action="accept">Tout accepter</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="newsletter-toast" id="newsletterToast" role="status" aria-live="polite"></div>
 <script src="js/main.js"></script>
 </body>

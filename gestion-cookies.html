@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark" data-glass="on">
+<html lang="fr" data-theme="light" data-glass="on">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L'Empreinte et la Couleur · Anne Barrault</title>
+<title>Gestion des cookies · Anne Barrault</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -50,49 +50,58 @@
 </nav>
 
 <main id="contenu" tabindex="-1">
-  <section class="expo-hero">
-    <div class="expo-hero__image img-frame"><img loading="lazy" decoding="async" src="assets/artwork-viallat.jpg" alt="Œuvre de Claude Viallat"></div>
-    <div class="expo-hero__content">
-      <span class="tag">exposition</span>
-      <h1 class="expo-hero__title">L'EMPREINTE<br>ET LA<br>COULEUR</h1>
-      <div class="expo-hero__social-row">
-        <hr class="divider">
-        <div class="socials">
-          <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 1668.56 1221.19" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+  <section class="page-hero">
+    <h1>Gestion des<br>cookies</h1>
+  </section>
+
+  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
+
+  <section class="legal">
+    <div class="legal__inner">
+      <p class="legal__updated">Dernière mise à jour : 10 septembre 2026</p>
+      <div class="legal__body">
+        <h2>Comment ça marche</h2>
+        <p>À votre première visite, un bandeau vous propose de <strong>tout accepter</strong>, de <strong>tout refuser</strong> ou de <strong>personnaliser</strong> votre choix, catégorie par catégorie. Rien n'est déposé avant que vous ayez répondu. Vous pouvez revenir sur cette page à tout moment, depuis le pied de page de n'importe quelle page du site, pour changer d'avis.</p>
+
+        <h2>Vos préférences actuelles</h2>
+        <p>Réglez chaque catégorie ci-dessous, puis enregistrez.</p>
+
+        <div class="cookie-pref">
+          <div class="cookie-pref__row">
+            <div><div class="cookie-pref__title">Nécessaires</div><p class="cookie-pref__desc">Le thème (clair / sombre) et l'activation des effets visuels, gardés sur cet appareil. Le site ne fonctionne pas sans.</p></div>
+            <span class="cookie-pref__locked">Toujours actifs</span>
+          </div>
+          <div class="cookie-pref__row">
+            <div><div class="cookie-pref__title">Mesure d'audience</div><p class="cookie-pref__desc">Fréquentation des pages, pour comprendre ce qui est consulté.</p></div>
+            <button class="cookie-toggle" type="button" role="switch" aria-checked="false" data-cookie-cat="analytics" aria-label="Mesure d'audience"><span class="cookie-toggle__knob"></span></button>
+          </div>
+          <div class="cookie-pref__row">
+            <div><div class="cookie-pref__title">Contenus tiers</div><p class="cookie-pref__desc">Vidéos et cartes intégrées depuis d'autres sites.</p></div>
+            <button class="cookie-toggle" type="button" role="switch" aria-checked="false" data-cookie-cat="embeds" aria-label="Contenus tiers"><span class="cookie-toggle__knob"></span></button>
+          </div>
         </div>
+
+        <div class="legal__actions">
+          <button type="button" class="btn-outline" data-cookie-action="accept">Tout accepter</button>
+          <button type="button" class="btn-outline" data-cookie-action="refuse">Tout refuser</button>
+          <button type="button" class="btn-outline" data-cookie-action="save">Enregistrer mes préférences</button>
+        </div>
+
+        <h2>Le détail par catégorie</h2>
+        <table class="legal__table">
+          <thead><tr><th>Catégorie</th><th>Ce que ça fait</th><th>Par défaut</th></tr></thead>
+          <tbody>
+            <tr><td>Nécessaires</td><td>Thème et effets</td><td>Toujours actifs</td></tr>
+            <tr><td>Mesure d'audience</td><td>Fréquentation des pages</td><td>Refusé</td></tr>
+            <tr><td>Contenus tiers</td><td>Vidéos, cartes</td><td>Refusé</td></tr>
+          </tbody>
+        </table>
+
+        <div class="legal__note"><strong>Ce qui est en place aujourd'hui.</strong> Le site ne dépose rien d'autre que le thème et les effets, gardés sur l'appareil du visiteur. Le bandeau se branche en même temps que la newsletter et la mesure d'audience.</div>
+
+        <h2>En savoir plus</h2>
+        <p>Pour le détail des autres données traitées par la galerie (newsletter, sécurité, droits RGPD), consultez la <a href="confidentialite.html">politique de confidentialité</a>.</p>
       </div>
-      <span class="expo-hero__artist">Claude Viallat</span>
-      <p class="expo-hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</p>
-      <hr class="divider">
-    </div>
-  </section>
-
-  <section class="expo-quote">
-    <h2>"L'EMPREINTE ET LA COULEUR"</h2>
-    <p>MADE BY CLAUDE VIALLAT</p>
-  </section>
-
-  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
-
-  <section class="expo-bio">
-    <div class="expo-bio__text">
-      <p>Né en 1936 à Nîmes, Claude Viallat grandit à Aubais, un village du Gard à la forte tradition taurine. Il étudie à l'École des Beaux-Arts de Montpellier de 1955 à 1959, où il croise notamment André-Pierre Arnal, Vincent Bioulès et Daniel Dezeuze, puis rejoint l'École nationale supérieure des Beaux-Arts de Paris. Il vit et travaille aujourd'hui à Nîmes.</p>
-      <p>En 1969, il fait partie des membres fondateurs du mouvement Supports/Surfaces, qui appelle à un renouvellement de la peinture par la déconstruction de ses matériaux traditionnels. Depuis la fin des années 1960, il répète inlassablement une même forme abstraite, sorte d'empreinte ou de tampon, sur des supports variés (bâches industrielles, tissus, objets du quotidien), affranchissant la couleur du châssis et de la toile classique.</p>
-      <p>Influencé par Kenneth Noland, Morris Louis, Sam Francis, Mark Rothko et Jackson Pollock, il a enseigné dans plusieurs écoles d'art, à Nice, Limoges, Marseille, Nîmes et Paris.</p>
-      <hr class="divider">
-    </div>
-    <div class="expo-bio__portrait img-frame"><img loading="lazy" decoding="async" src="assets/portrait-viallat.jpg" alt="Portrait de Claude Viallat"></div>
-  </section>
-
-  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
-
-  <section class="emerging">
-    <div class="emerging__head"><span class="eyebrow">RECOMMANDATIONS</span><hr class="divider"></div>
-    <div class="emerging__grid">
-      <article class="card"><a class="card__link" href="expo-when-i-think.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/artwork-kamijo.jpg" alt="Visuel de l'exposition « &quot;When I Think of You in Spring&quot; »"></div><h2 class="card__title">"When I Think of You in Spring"</h2><span class="card__artist">SUSUMU KAMIJO</span></a></article>
-      <article class="card"><a class="card__link" href="expo-lorsque-la-beaute.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/gallery-installation.jpg" alt="Visuel de l'exposition « &quot;Lorsque la Beauté Paraît&quot; »"></div><h2 class="card__title">"Lorsque la Beauté Paraît"</h2><span class="card__artist">LEE MINGWEI</span></a></article>
-      <article class="card"><a class="card__link" href="expo-viallat.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/artwork-viallat.jpg" alt="Visuel de l'exposition « &quot;L'Empreinte et la Couleur&quot; »"></div><h2 class="card__title">"L'Empreinte et la Couleur"</h2><span class="card__artist">CLAUDE VIALLAT</span></a></article>
     </div>
   </section>
 </main>

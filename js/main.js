@@ -239,4 +239,86 @@
       form.reset();
     });
   });
+
+  /* ---------- Cookies : bandeau de consentement + reglages ----------
+     Trois categories : necessaires (theme et effets, toujours actifs, non
+     desactivables), mesure d'audience et contenus tiers (desactives par
+     defaut, jamais deposes avant un choix du visiteur). Le choix est
+     stocke en local (aucun envoi reseau : demonstration statique) et
+     modifiable a tout moment depuis la page "Gestion des cookies", liee
+     en pied de page. Le bandeau et cette page partagent les memes
+     boutons/interrupteurs, reperes par data-attribute plutot que par id
+     pour pouvoir coexister sur une meme page sans doublon d'identifiant. */
+  const COOKIE_KEY = 'ab-cookies';
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookiePrefsPanel = document.getElementById('cookieBannerPrefs');
+  const onCookiePage = /gestion-cookies\.html$/.test(location.pathname);
+
+  const readCookieConsent = () => {
+    try { return JSON.parse(localStorage.getItem(COOKIE_KEY)); } catch (e) { return null; }
+  };
+  const writeCookieConsent = (c) => { try { localStorage.setItem(COOKIE_KEY, JSON.stringify(c)); } catch (e) {} };
+
+  const cookieToggleEls = () => Array.from(document.querySelectorAll('.cookie-toggle'));
+  const syncCookieToggles = (consent) => {
+    const c = consent || { analytics: false, embeds: false };
+    cookieToggleEls().forEach((btn) => {
+      if (btn.dataset.cookieCat === 'necessary') { btn.setAttribute('aria-checked', 'true'); return; }
+      btn.setAttribute('aria-checked', String(!!c[btn.dataset.cookieCat]));
+    });
+  };
+  const readCookieToggles = () => {
+    const c = { necessary: true };
+    cookieToggleEls().forEach((btn) => {
+      if (btn.dataset.cookieCat !== 'necessary') c[btn.dataset.cookieCat] = btn.getAttribute('aria-checked') === 'true';
+    });
+    return c;
+  };
+
+  let cookieConsent = readCookieConsent();
+  syncCookieToggles(cookieConsent);
+  // Pas de bandeau sur la page dediee : ses interrupteurs suffisent, doublon evite.
+  if (cookieBanner && !cookieConsent && !onCookiePage) {
+    requestAnimationFrame(() => cookieBanner.classList.add('is-visible'));
+  }
+  const hideCookieBanner = () => { if (cookieBanner) cookieBanner.classList.remove('is-visible'); };
+
+  cookieToggleEls().forEach((btn) => {
+    if (btn.dataset.cookieCat === 'necessary') return; // toujours actif, non cliquable
+    btn.addEventListener('click', () => {
+      btn.setAttribute('aria-checked', String(btn.getAttribute('aria-checked') !== 'true'));
+    });
+  });
+
+  document.querySelectorAll('[data-cookie-action="customize"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (!cookiePrefsPanel) return;
+      const willOpen = cookiePrefsPanel.hidden;
+      cookiePrefsPanel.hidden = !willOpen;
+      btn.textContent = willOpen ? 'Réduire' : 'Personnaliser';
+    });
+  });
+
+  document.querySelectorAll('[data-cookie-action="accept"]').forEach((btn) => btn.addEventListener('click', () => {
+    cookieConsent = { necessary: true, analytics: true, embeds: true, decidedAt: Date.now() };
+    writeCookieConsent(cookieConsent);
+    syncCookieToggles(cookieConsent);
+    hideCookieBanner();
+    if (onCookiePage) showToast('Tous les cookies sont acceptés.');
+  }));
+
+  document.querySelectorAll('[data-cookie-action="refuse"]').forEach((btn) => btn.addEventListener('click', () => {
+    cookieConsent = { necessary: true, analytics: false, embeds: false, decidedAt: Date.now() };
+    writeCookieConsent(cookieConsent);
+    syncCookieToggles(cookieConsent);
+    hideCookieBanner();
+    if (onCookiePage) showToast('Seuls les cookies nécessaires restent actifs.');
+  }));
+
+  document.querySelectorAll('[data-cookie-action="save"]').forEach((btn) => btn.addEventListener('click', () => {
+    cookieConsent = Object.assign(readCookieToggles(), { decidedAt: Date.now() });
+    writeCookieConsent(cookieConsent);
+    hideCookieBanner();
+    showToast('Vos préférences de cookies sont enregistrées.');
+  }));
 })();
