@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artistes · Anne Barrault</title>
+<title>Katharina Bosse · Anne Barrault</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -50,51 +50,50 @@
 </nav>
 
 <main id="contenu" tabindex="-1">
-  <section class="page-hero">
-    <h1>Artistes</h1>
-    <div class="filter-bar">
-      <input type="text" class="filter-bar__search" id="filterSearch" placeholder="Rechercher un artiste…" autocomplete="off" style="margin-left:4px">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  <section class="expo-hero">
+    <div class="expo-hero__image img-frame"><img loading="lazy" decoding="async" src="assets/gallery-installation.jpg" alt="Visuel a remplacer : série « New Burlesque », de Katharina Bosse"></div>
+    <div class="expo-hero__content">
+      <span class="tag">photographie</span>
+      <h1 class="expo-hero__title">KATHARINA<br>BOSSE</h1>
+      <div class="expo-hero__social-row">
+        <hr class="divider">
+        <div class="socials">
+          <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 1668.56 1221.19" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <span class="expo-hero__artist">Photographe</span>
+      <p class="expo-hero__desc">Le genre, le corps et la famille, entre documentaire, portrait et mise en scène.</p>
+      <hr class="divider">
     </div>
   </section>
 
-  <section class="name-wall">
-    <!-- Mur d'artistes : Susumu Kamijo, Lee Mingwei et Claude Viallat, qui ont deja leur fiche,
-         ouvrent la liste. Suit la liste reelle de la galerie (galerieannebarrault.com) : Bosse,
-         Doucet, Killoffer, Losier, Meïté Sikely, Pons, Spoerri et Topor ont eux aussi leur fiche
-         (texte reel, visuel a remplacer) ; le reste est en preparation (fiche a venir). -->
-    <a class="name-wall__item" data-filter-item data-search="susumu kamijo" href="expo-when-i-think.html">Susumu Kamijo<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="lee mingwei" href="expo-lorsque-la-beaute.html">Lee Mingwei<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="claude viallat" href="expo-viallat.html">Claude Viallat<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="david b.">David B.<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="katharina bosse" href="artiste-bosse.html">Katharina Bosse<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="neïla czermak ichti">Neïla Czermak Ichti<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="bertrand dezoteux">Bertrand Dezoteux<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="julie doucet" href="artiste-doucet.html">Julie Doucet<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="dominique figarella">Dominique Figarella<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="jochen gerner">Jochen Gerner<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="killoffer" href="artiste-killoffer.html">Killoffer<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="tiziana la melia">Tiziana La Melia<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="lalitha lajmi">Lalitha Lajmi<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="marie losier" href="artiste-losier.html">Marie Losier<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="manuela marques">Manuela Marques<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="ramuntcho matta">Ramuntcho Matta<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="rayane mcirdi">Rayane Mcirdi<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="ibrahim meïté sikely" href="artiste-sikely.html">Ibrahim Meïté Sikely<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="olivier menanteau">Olivier Menanteau<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="vimala pons" href="artiste-pons.html">Vimala Pons<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="jagdeep raina">Jagdeep Raina<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="tere recarens">Tere Recarens<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="david renaud">David Renaud<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="stéphanie saadé">Stéphanie Saadé<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="liv schulman">Liv Schulman<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="daniel spoerri" href="artiste-spoerri.html">Daniel Spoerri<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" data-filter-item data-search="roland topor" href="artiste-topor.html">Roland Topor<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="alun williams">Alun Williams<span class="sparkle" aria-hidden="true">✦</span></a>
-    <a class="name-wall__item" title="Fiche en preparation" data-filter-item data-search="euridice zaituna kala">Euridice Zaituna Kala<span class="sparkle" aria-hidden="true">✦</span></a>
+  <section class="expo-quote">
+    <h2>« NEW BURLESQUE »</h2>
+    <p>PAR KATHARINA BOSSE</p>
   </section>
 
-  <div class="divider" style="margin:0 var(--margin) 40px; width:calc(100% - 2 * var(--margin));"></div>
+  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
+
+  <section class="expo-bio">
+    <div class="expo-bio__text">
+      <p>Née en 1968 à Turku, en Finlande, Katharina Bosse grandit entre le Canada et l'Allemagne avant de vivre plusieurs années à New York. Photographe, artiste et professeure, elle développe depuis les années 1990 des projets au long cours consacrés au genre, au corps, à la famille et aux récits biographiques. Elle travaille aussi bien avec la photographie argentique qu'avec la photographie numérique et le collage.</p>
+      <p>Son travail se situe à la frontière entre documentaire, portrait et mise en scène. Dans New Burlesque, réalisé après deux années passées à photographier des artistes de la scène burlesque américaine, elle s'intéresse aux personnages, aux costumes et aux formes de représentation du corps. Cette série donne lieu à un livre publié en 2003 et à plusieurs expositions.</p>
+      <p>Avec A Portrait of the Artist as a Young Mother, elle utilise ensuite son propre corps et celui de ses enfants pour interroger la maternité et la place des femmes artistes. Ses photographies ont été publiées dans The New Yorker, Der Spiegel et le New York Times Magazine. Ses œuvres sont notamment présentes dans les collections du MoMA à New York et de la Maison Européenne de la Photographie à Paris.</p>
+      <hr class="divider">
+    </div>
+  </section>
+
+  <div class="divider" style="margin:0 var(--margin) 0; width:calc(100% - 2 * var(--margin));"></div>
+
+  <section class="emerging">
+    <div class="emerging__head"><span class="eyebrow">RECOMMANDATIONS</span><hr class="divider"></div>
+    <div class="emerging__grid">
+      <article class="card"><a class="card__link" href="expo-when-i-think.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/artwork-kamijo.jpg" alt="Visuel de l'exposition « &quot;When I Think of You in Spring&quot; »"></div><h2 class="card__title">"When I Think of You in Spring"</h2><span class="card__artist">SUSUMU KAMIJO</span></a></article>
+      <article class="card"><a class="card__link" href="expo-lorsque-la-beaute.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/gallery-installation.jpg" alt="Visuel de l'exposition « &quot;Lorsque la Beauté Paraît&quot; »"></div><h2 class="card__title">"Lorsque la Beauté Paraît"</h2><span class="card__artist">LEE MINGWEI</span></a></article>
+      <article class="card"><a class="card__link" href="expo-viallat.html"><div class="card__image"><img loading="lazy" decoding="async" class="placeholder-photo" src="assets/artwork-viallat.jpg" alt="Visuel de l'exposition « &quot;L'Empreinte et la Couleur&quot; »"></div><h2 class="card__title">"L'Empreinte et la Couleur"</h2><span class="card__artist">CLAUDE VIALLAT</span></a></article>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
