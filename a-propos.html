@@ -90,8 +90,18 @@
     <div class="footer__col footer__newsletter">
       <span class="eyebrow eyebrow--light">NEWSLETTER</span>
       <p>ABONNEZ-VOUS A NOTRE NEWSLETTER ET RESTEZ<br>INFORME DE TOUT CE QUI CE PASSE A LA GALERIE.</p>
+      <form class="newsletter-form" novalidate>
+        <div class="newsletter-form__row">
+          <label class="sr-only" for="newsletter-email">Adresse email</label>
+          <input class="newsletter-form__input" type="email" id="newsletter-email" name="email" placeholder="Votre adresse email" autocomplete="email" required>
+          <button class="btn-outline newsletter-form__submit" type="submit">S'INSCRIRE</button>
+        </div>
+        <label class="newsletter-form__consent">
+          <input type="checkbox" required>
+          <span>J'accepte les <a href="#">conditions générales d'utilisation</a> et de recevoir la newsletter de la galerie.</span>
+        </label>
+      </form>
     </div>
-    <button class="btn-outline" type="button">S'INSCRIRE</button>
   </div>
   <hr class="divider divider--footer">
   <div class="footer__row footer__row--bottom">
@@ -106,6 +116,7 @@
   </div>
 </footer>
 
+<div class="newsletter-toast" id="newsletterToast" role="status" aria-live="polite"></div>
 <script src="js/main.js"></script>
 </body>
 </html>

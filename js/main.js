@@ -193,4 +193,29 @@
     if (filterSearch) filterSearch.addEventListener('input', applyFilters);
     categoryChecks.forEach((c) => c.addEventListener('change', applyFilters));
   }
+
+  /* ---------- Newsletter ----------
+     Site statique : pas d'envoi reel, seulement une validation (email +
+     acceptation des conditions) et une confirmation visuelle. */
+  const newsletterToast = document.getElementById('newsletterToast');
+  let toastTimer = null;
+  const showToast = (message) => {
+    if (!newsletterToast) return;
+    newsletterToast.textContent = message;
+    newsletterToast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => newsletterToast.classList.remove('is-visible'), 4000);
+  };
+
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    const email = form.querySelector('input[type="email"]');
+    const consent = form.querySelector('input[type="checkbox"]');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (email && !email.checkValidity()) { email.reportValidity(); return; }
+      if (consent && !consent.checkValidity()) { consent.reportValidity(); return; }
+      showToast('Vous êtes bien inscrit·e à la newsletter de la Galerie Anne Barrault.');
+      form.reset();
+    });
+  });
 })();
