@@ -290,12 +290,24 @@
     });
   });
 
+  const saveCookieChoices = () => {
+    cookieConsent = Object.assign(readCookieToggles(), { decidedAt: Date.now() });
+    writeCookieConsent(cookieConsent);
+    hideCookieBanner();
+    showToast('Vos préférences de cookies sont enregistrées.');
+  };
+
+  // Dans le bandeau, "Personnaliser" ouvre le detail des categories puis se
+  // transforme en "Enregistrer mes choix" : jamais deux boutons de
+  // sauvegarde en meme temps, jamais un bouton "Enregistrer" affiche avant
+  // qu'il y ait quoi que ce soit a enregistrer.
   document.querySelectorAll('[data-cookie-action="customize"]').forEach((btn) => {
     btn.addEventListener('click', () => {
+      if (btn.dataset.cookieAction === 'save') { saveCookieChoices(); return; }
       if (!cookiePrefsPanel) return;
-      const willOpen = cookiePrefsPanel.hidden;
-      cookiePrefsPanel.hidden = !willOpen;
-      btn.textContent = willOpen ? 'Réduire' : 'Personnaliser';
+      cookiePrefsPanel.hidden = false;
+      btn.textContent = 'Enregistrer mes choix';
+      btn.dataset.cookieAction = 'save';
     });
   });
 
@@ -315,10 +327,9 @@
     if (onCookiePage) showToast('Seuls les cookies nécessaires restent actifs.');
   }));
 
+  // Bouton "Enregistrer mes preferences" toujours present tel quel (page
+  // "Gestion des cookies" : les categories y sont deja toutes visibles).
   document.querySelectorAll('[data-cookie-action="save"]').forEach((btn) => btn.addEventListener('click', () => {
-    cookieConsent = Object.assign(readCookieToggles(), { decidedAt: Date.now() });
-    writeCookieConsent(cookieConsent);
-    hideCookieBanner();
-    showToast('Vos préférences de cookies sont enregistrées.');
+    saveCookieChoices();
   }));
 })();

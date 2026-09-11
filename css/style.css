@@ -426,9 +426,11 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .cookie-banner__text { font-size: 13px; line-height: 1.6; color: var(--footer-text-muted); max-width: 720px; }
 .cookie-banner__text a { color: var(--footer-text); text-decoration: underline; }
 .cookie-banner__prefs { padding-top: 4px; border-top: 1px solid rgba(255,255,255,0.12); }
-.cookie-banner__actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; }
-.cookie-banner__buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-.cookie-banner__link { font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--footer-text); text-decoration: underline; text-underline-offset: 3px; flex: none; }
+/* Trois boutons au meme niveau (Refuser / Personnaliser / Accepter), jamais
+   un 4e bouton "Enregistrer" en plus : Personnaliser se transforme en
+   Enregistrer une fois le detail ouvert (voir main.js). */
+.cookie-banner__buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.cookie-banner__buttons .btn-outline { flex: 1 1 0; min-width: 132px; text-align: center; white-space: nowrap; }
 .btn-outline--ghost { border-color: rgba(255,255,255,0.35); }
 .btn-outline--ghost:hover { background: rgba(255,255,255,0.1); color: var(--footer-text); }
 
@@ -453,10 +455,13 @@ img.placeholder-photo { object-fit: cover; width: 100%; }
 .legal .cookie-toggle[aria-checked="true"] .cookie-toggle__knob { background: #fff; }
 
 @media (max-width: 700px) {
-  .cookie-banner { padding: 20px; }
-  .cookie-banner__actions { flex-direction: column; align-items: stretch; }
-  .cookie-banner__buttons { flex-direction: column; }
+  .cookie-banner { padding: 18px; }
+  .cookie-banner__panel { gap: 14px; }
+  .cookie-banner__buttons .btn-outline { min-width: 0; flex-basis: calc(50% - 5px); }
   .cookie-pref__row { flex-direction: column; gap: 10px; }
+}
+@media (max-width: 360px) {
+  .cookie-banner__buttons .btn-outline { flex-basis: 100%; }
 }
 
 /* =========================================================
